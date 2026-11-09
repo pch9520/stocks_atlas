@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# 运行时数据（含预测历史）
+data/predictions.db*
+data/*.db
+data/*.db-*
+
+# 密钥 / 本地配置（绝不要提交）
+data/ai_config.json
+.env
+.env.*
+*.pem
+*.key
+
+# 临时文件
+.tmp-chrome/
+*.log

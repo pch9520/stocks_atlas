@@ -1,0 +1,3834 @@
+{
+ "source": "stockanalysis.com index lists / 东方财富行情",
+ "updatedAt": "2026-11-02",
+ "markets": {
+  "us500": {
+   "label": "US 500",
+   "name": "标普 500",
+   "currency": "USD",
+   "indexName": "S&P 500",
+   "members": [
+    {
+     "symbol": "105.AAPL",
+     "code": "AAPL",
+     "quoteCode": "AAPL",
+     "name": "Apple Inc."
+    },
+    {
+     "symbol": "105.NVDA",
+     "code": "NVDA",
+     "quoteCode": "NVDA",
+     "name": "NVIDIA Corporation"
+    },
+    {
+     "symbol": "105.MSFT",
+     "code": "MSFT",
+     "quoteCode": "MSFT",
+     "name": "Microsoft Corporation"
+    },
+    {
+     "symbol": "105.AMZN",
+     "code": "AMZN",
+     "quoteCode": "AMZN",
+     "name": "Amazon.com, Inc."
+    },
+    {
+     "symbol": "105.GOOGL",
+     "code": "GOOGL",
+     "quoteCode": "GOOGL",
+     "name": "Alphabet Inc."
+    },
+    {
+     "symbol": "105.AVGO",
+     "code": "AVGO",
+     "quoteCode": "AVGO",
+     "name": "Broadcom Inc."
+    },
+    {
+     "symbol": "105.META",
+     "code": "META",
+     "quoteCode": "META",
+     "name": "Meta Platforms, Inc."
+    },
+    {
+     "symbol": "105.GOOG",
+     "code": "GOOG",
+     "quoteCode": "GOOG",
+     "name": "Alphabet Inc."
+    },
+    {
+     "symbol": "106.LLY",
+     "code": "LLY",
+     "quoteCode": "LLY",
+     "name": "Eli Lilly and Company"
+    },
+    {
+     "symbol": "105.TSLA",
+     "code": "TSLA",
+     "quoteCode": "TSLA",
+     "name": "Tesla, Inc."
+    },
+    {
+     "symbol": "106.BRK_B",
+     "code": "BRK.B",
+     "quoteCode": "BRK_B",
+     "name": "Berkshire Hathaway Inc."
+    },
+    {
+     "symbol": "105.MU",
+     "code": "MU",
+     "quoteCode": "MU",
+     "name": "Micron Technology, Inc."
+    },
+    {
+     "symbol": "106.JPM",
+     "code": "JPM",
+     "quoteCode": "JPM",
+     "name": "JPMorgan Chase & Co."
+    },
+    {
+     "symbol": "105.AMD",
+     "code": "AMD",
+     "quoteCode": "AMD",
+     "name": "Advanced Micro Devices, Inc."
+    },
+    {
+     "symbol": "106.XOM",
+     "code": "XOM",
+     "quoteCode": "XOM",
+     "name": "ExxonMobil Holdings Corporation"
+    },
+    {
+     "symbol": "106.V",
+     "code": "V",
+     "quoteCode": "V",
+     "name": "Visa Inc."
+    },
+    {
+     "symbol": "106.JNJ",
+     "code": "JNJ",
+     "quoteCode": "JNJ",
+     "name": "Johnson & Johnson"
+    },
+    {
+     "symbol": "105.WMT",
+     "code": "WMT",
+     "quoteCode": "WMT",
+     "name": "Walmart Inc."
+    },
+    {
+     "symbol": "106.ABBV",
+     "code": "ABBV",
+     "quoteCode": "ABBV",
+     "name": "AbbVie Inc."
+    },
+    {
+     "symbol": "106.MA",
+     "code": "MA",
+     "quoteCode": "MA",
+     "name": "Mastercard Incorporated"
+    },
+    {
+     "symbol": "106.CVX",
+     "code": "CVX",
+     "quoteCode": "CVX",
+     "name": "Chevron Corporation"
+    },
+    {
+     "symbol": "105.COST",
+     "code": "COST",
+     "quoteCode": "COST",
+     "name": "Costco Wholesale Corporation"
+    },
+    {
+     "symbol": "105.PLTR",
+     "code": "PLTR",
+     "quoteCode": "PLTR",
+     "name": "Palantir Technologies Inc."
+    },
+    {
+     "symbol": "105.CSCO",
+     "code": "CSCO",
+     "quoteCode": "CSCO",
+     "name": "Cisco Systems, Inc."
+    },
+    {
+     "symbol": "106.PG",
+     "code": "PG",
+     "quoteCode": "PG",
+     "name": "The Procter & Gamble Company"
+    },
+    {
+     "symbol": "106.MRK",
+     "code": "MRK",
+     "quoteCode": "MRK",
+     "name": "Merck & Co., Inc."
+    },
+    {
+     "symbol": "106.UNH",
+     "code": "UNH",
+     "quoteCode": "UNH",
+     "name": "UnitedHealth Group Incorporated"
+    },
+    {
+     "symbol": "106.KO",
+     "code": "KO",
+     "quoteCode": "KO",
+     "name": "The Coca-Cola Company"
+    },
+    {
+     "symbol": "106.HD",
+     "code": "HD",
+     "quoteCode": "HD",
+     "name": "The Home Depot, Inc."
+    },
+    {
+     "symbol": "105.INTC",
+     "code": "INTC",
+     "quoteCode": "INTC",
+     "name": "Intel Corporation"
+    },
+    {
+     "symbol": "106.PM",
+     "code": "PM",
+     "quoteCode": "PM",
+     "name": "Philip Morris International Inc."
+    },
+    {
+     "symbol": "106.BAC",
+     "code": "BAC",
+     "quoteCode": "BAC",
+     "name": "Bank of America Corporation"
+    },
+    {
+     "symbol": "106.GE",
+     "code": "GE",
+     "quoteCode": "GE",
+     "name": "GE Aerospace"
+    },
+    {
+     "symbol": "105.AMAT",
+     "code": "AMAT",
+     "quoteCode": "AMAT",
+     "name": "Applied Materials, Inc."
+    },
+    {
+     "symbol": "105.LRCX",
+     "code": "LRCX",
+     "quoteCode": "LRCX",
+     "name": "Lam Research Corporation"
+    },
+    {
+     "symbol": "105.PANW",
+     "code": "PANW",
+     "quoteCode": "PANW",
+     "name": "Palo Alto Networks, Inc."
+    },
+    {
+     "symbol": "106.CAT",
+     "code": "CAT",
+     "quoteCode": "CAT",
+     "name": "Caterpillar Inc."
+    },
+    {
+     "symbol": "105.TXN",
+     "code": "TXN",
+     "quoteCode": "TXN",
+     "name": "Texas Instruments Incorporated"
+    },
+    {
+     "symbol": "106.RTX",
+     "code": "RTX",
+     "quoteCode": "RTX",
+     "name": "RTX Corporation"
+    },
+    {
+     "symbol": "106.GS",
+     "code": "GS",
+     "quoteCode": "GS",
+     "name": "The Goldman Sachs Group, Inc."
+    },
+    {
+     "symbol": "105.NFLX",
+     "code": "NFLX",
+     "quoteCode": "NFLX",
+     "name": "Netflix, Inc."
+    },
+    {
+     "symbol": "106.TMO",
+     "code": "TMO",
+     "quoteCode": "TMO",
+     "name": "Thermo Fisher Scientific Inc."
+    },
+    {
+     "symbol": "105.CRWD",
+     "code": "CRWD",
+     "quoteCode": "CRWD",
+     "name": "CrowdStrike Holdings, Inc."
+    },
+    {
+     "symbol": "106.WFC",
+     "code": "WFC",
+     "quoteCode": "WFC",
+     "name": "Wells Fargo & Company"
+    },
+    {
+     "symbol": "105.AMGN",
+     "code": "AMGN",
+     "quoteCode": "AMGN",
+     "name": "Amgen Inc."
+    },
+    {
+     "symbol": "106.IBM",
+     "code": "IBM",
+     "quoteCode": "IBM",
+     "name": "International Business Machines Corporation"
+    },
+    {
+     "symbol": "105.LIN",
+     "code": "LIN",
+     "quoteCode": "LIN",
+     "name": "Linde plc"
+    },
+    {
+     "symbol": "106.GEV",
+     "code": "GEV",
+     "quoteCode": "GEV",
+     "name": "GE Vernova Inc."
+    },
+    {
+     "symbol": "106.ORCL",
+     "code": "ORCL",
+     "quoteCode": "ORCL",
+     "name": "Oracle Corporation"
+    },
+    {
+     "symbol": "106.MS",
+     "code": "MS",
+     "quoteCode": "MS",
+     "name": "Morgan Stanley"
+    },
+    {
+     "symbol": "105.GILD",
+     "code": "GILD",
+     "quoteCode": "GILD",
+     "name": "Gilead Sciences, Inc."
+    },
+    {
+     "symbol": "105.KLAC",
+     "code": "KLAC",
+     "quoteCode": "KLAC",
+     "name": "KLA Corporation"
+    },
+    {
+     "symbol": "106.C",
+     "code": "C",
+     "quoteCode": "C",
+     "name": "Citigroup Inc."
+    },
+    {
+     "symbol": "105.ADI",
+     "code": "ADI",
+     "quoteCode": "ADI",
+     "name": "Analog Devices, Inc."
+    },
+    {
+     "symbol": "106.APH",
+     "code": "APH",
+     "quoteCode": "APH",
+     "name": "Amphenol Corporation"
+    },
+    {
+     "symbol": "106.DIS",
+     "code": "DIS",
+     "quoteCode": "DIS",
+     "name": "The Walt Disney Company"
+    },
+    {
+     "symbol": "106.CRM",
+     "code": "CRM",
+     "quoteCode": "CRM",
+     "name": "Salesforce, Inc."
+    },
+    {
+     "symbol": "105.PEP",
+     "code": "PEP",
+     "quoteCode": "PEP",
+     "name": "PepsiCo, Inc."
+    },
+    {
+     "symbol": "106.VZ",
+     "code": "VZ",
+     "quoteCode": "VZ",
+     "name": "Verizon Communications Inc."
+    },
+    {
+     "symbol": "106.COP",
+     "code": "COP",
+     "quoteCode": "COP",
+     "name": "ConocoPhillips"
+    },
+    {
+     "symbol": "106.ABT",
+     "code": "ABT",
+     "quoteCode": "ABT",
+     "name": "Abbott Laboratories"
+    },
+    {
+     "symbol": "106.MCD",
+     "code": "MCD",
+     "quoteCode": "MCD",
+     "name": "McDonald's Corporation"
+    },
+    {
+     "symbol": "106.UNP",
+     "code": "UNP",
+     "quoteCode": "UNP",
+     "name": "Union Pacific Corporation"
+    },
+    {
+     "symbol": "106.ANET",
+     "code": "ANET",
+     "quoteCode": "ANET",
+     "name": "Arista Networks, Inc."
+    },
+    {
+     "symbol": "105.QCOM",
+     "code": "QCOM",
+     "quoteCode": "QCOM",
+     "name": "QUALCOMM Incorporated"
+    },
+    {
+     "symbol": "106.NEE",
+     "code": "NEE",
+     "quoteCode": "NEE",
+     "name": "NextEra Energy, Inc."
+    },
+    {
+     "symbol": "106.PFE",
+     "code": "PFE",
+     "quoteCode": "PFE",
+     "name": "Pfizer Inc."
+    },
+    {
+     "symbol": "105.MRVL",
+     "code": "MRVL",
+     "quoteCode": "MRVL",
+     "name": "Marvell Technology, Inc."
+    },
+    {
+     "symbol": "106.DE",
+     "code": "DE",
+     "quoteCode": "DE",
+     "name": "Deere & Company"
+    },
+    {
+     "symbol": "106.WELL",
+     "code": "WELL",
+     "quoteCode": "WELL",
+     "name": "Welltower Inc."
+    },
+    {
+     "symbol": "106.AXP",
+     "code": "AXP",
+     "quoteCode": "AXP",
+     "name": "American Express Company"
+    },
+    {
+     "symbol": "105.SNDK",
+     "code": "SNDK",
+     "quoteCode": "SNDK",
+     "name": "Sandisk Corporation"
+    },
+    {
+     "symbol": "106.BLK",
+     "code": "BLK",
+     "quoteCode": "BLK",
+     "name": "BlackRock, Inc."
+    },
+    {
+     "symbol": "106.ACN",
+     "code": "ACN",
+     "quoteCode": "ACN",
+     "name": "Accenture plc"
+    },
+    {
+     "symbol": "106.TJX",
+     "code": "TJX",
+     "quoteCode": "TJX",
+     "name": "The TJX Companies, Inc."
+    },
+    {
+     "symbol": "105.ISRG",
+     "code": "ISRG",
+     "quoteCode": "ISRG",
+     "name": "Intuitive Surgical, Inc."
+    },
+    {
+     "symbol": "106.T",
+     "code": "T",
+     "quoteCode": "T",
+     "name": "AT&T Inc."
+    },
+    {
+     "symbol": "105.STX",
+     "code": "STX",
+     "quoteCode": "STX",
+     "name": "Seagate Technology Holdings plc"
+    },
+    {
+     "symbol": "106.DHR",
+     "code": "DHR",
+     "quoteCode": "DHR",
+     "name": "Danaher Corporation"
+    },
+    {
+     "symbol": "106.ETN",
+     "code": "ETN",
+     "quoteCode": "ETN",
+     "name": "Eaton Corporation plc"
+    },
+    {
+     "symbol": "106.SCHW",
+     "code": "SCHW",
+     "quoteCode": "SCHW",
+     "name": "The Charles Schwab Corporation"
+    },
+    {
+     "symbol": "105.VRTX",
+     "code": "VRTX",
+     "quoteCode": "VRTX",
+     "name": "Vertex Pharmaceuticals Incorporated"
+    },
+    {
+     "symbol": "106.SPGI",
+     "code": "SPGI",
+     "quoteCode": "SPGI",
+     "name": "S&P Global Inc."
+    },
+    {
+     "symbol": "106.BA",
+     "code": "BA",
+     "quoteCode": "BA",
+     "name": "The Boeing Company"
+    },
+    {
+     "symbol": "106.PGR",
+     "code": "PGR",
+     "quoteCode": "PGR",
+     "name": "The Progressive Corporation"
+    },
+    {
+     "symbol": "106.UBER",
+     "code": "UBER",
+     "quoteCode": "UBER",
+     "name": "Uber Technologies, Inc."
+    },
+    {
+     "symbol": "105.WDC",
+     "code": "WDC",
+     "quoteCode": "WDC",
+     "name": "Western Digital Corporation"
+    },
+    {
+     "symbol": "106.MO",
+     "code": "MO",
+     "quoteCode": "MO",
+     "name": "Altria Group, Inc."
+    },
+    {
+     "symbol": "106.LMT",
+     "code": "LMT",
+     "quoteCode": "LMT",
+     "name": "Lockheed Martin Corporation"
+    },
+    {
+     "symbol": "106.DELL",
+     "code": "DELL",
+     "quoteCode": "DELL",
+     "name": "Dell Technologies Inc."
+    },
+    {
+     "symbol": "106.CB",
+     "code": "CB",
+     "quoteCode": "CB",
+     "name": "Chubb Limited"
+    },
+    {
+     "symbol": "106.BMY",
+     "code": "BMY",
+     "quoteCode": "BMY",
+     "name": "Bristol-Myers Squibb Company"
+    },
+    {
+     "symbol": "106.COF",
+     "code": "COF",
+     "quoteCode": "COF",
+     "name": "Capital One Financial Corporation"
+    },
+    {
+     "symbol": "106.MPC",
+     "code": "MPC",
+     "quoteCode": "MPC",
+     "name": "Marathon Petroleum Corporation"
+    },
+    {
+     "symbol": "106.PLD",
+     "code": "PLD",
+     "quoteCode": "PLD",
+     "name": "Prologis, Inc."
+    },
+    {
+     "symbol": "106.MDT",
+     "code": "MDT",
+     "quoteCode": "MDT",
+     "name": "Medtronic plc"
+    },
+    {
+     "symbol": "105.SBUX",
+     "code": "SBUX",
+     "quoteCode": "SBUX",
+     "name": "Starbucks Corporation"
+    },
+    {
+     "symbol": "106.LOW",
+     "code": "LOW",
+     "quoteCode": "LOW",
+     "name": "Lowe's Companies, Inc."
+    },
+    {
+     "symbol": "105.ADP",
+     "code": "ADP",
+     "quoteCode": "ADP",
+     "name": "Automatic Data Processing, Inc."
+    },
+    {
+     "symbol": "106.MCK",
+     "code": "MCK",
+     "quoteCode": "MCK",
+     "name": "McKesson Corporation"
+    },
+    {
+     "symbol": "106.CVS",
+     "code": "CVS",
+     "quoteCode": "CVS",
+     "name": "CVS Health Corporation"
+    },
+    {
+     "symbol": "106.VLO",
+     "code": "VLO",
+     "quoteCode": "VLO",
+     "name": "Valero Energy Corporation"
+    },
+    {
+     "symbol": "106.PH",
+     "code": "PH",
+     "quoteCode": "PH",
+     "name": "Parker-Hannifin Corporation"
+    },
+    {
+     "symbol": "106.PSX",
+     "code": "PSX",
+     "quoteCode": "PSX",
+     "name": "Phillips 66"
+    },
+    {
+     "symbol": "106.NEM",
+     "code": "NEM",
+     "quoteCode": "NEM",
+     "name": "Newmont Corporation"
+    },
+    {
+     "symbol": "105.BKNG",
+     "code": "BKNG",
+     "quoteCode": "BKNG",
+     "name": "Booking Holdings Inc."
+    },
+    {
+     "symbol": "105.CME",
+     "code": "CME",
+     "quoteCode": "CME",
+     "name": "CME Group Inc."
+    },
+    {
+     "symbol": "106.NOW",
+     "code": "NOW",
+     "quoteCode": "NOW",
+     "name": "ServiceNow, Inc."
+    },
+    {
+     "symbol": "106.SO",
+     "code": "SO",
+     "quoteCode": "SO",
+     "name": "The Southern Company"
+    },
+    {
+     "symbol": "106.SYK",
+     "code": "SYK",
+     "quoteCode": "SYK",
+     "name": "Stryker Corporation"
+    },
+    {
+     "symbol": "105.EQIX",
+     "code": "EQIX",
+     "quoteCode": "EQIX",
+     "name": "Equinix, Inc."
+    },
+    {
+     "symbol": "106.BNY",
+     "code": "BNY",
+     "quoteCode": "BNY",
+     "name": "The Bank of New York Mellon Corporation"
+    },
+    {
+     "symbol": "105.ADBE",
+     "code": "ADBE",
+     "quoteCode": "ADBE",
+     "name": "Adobe Inc."
+    },
+    {
+     "symbol": "106.DUK",
+     "code": "DUK",
+     "quoteCode": "DUK",
+     "name": "Duke Energy Corporation"
+    },
+    {
+     "symbol": "106.GLW",
+     "code": "GLW",
+     "quoteCode": "GLW",
+     "name": "Corning Incorporated"
+    },
+    {
+     "symbol": "105.CSX",
+     "code": "CSX",
+     "quoteCode": "CSX",
+     "name": "CSX Corporation"
+    },
+    {
+     "symbol": "106.MRSH",
+     "code": "MRSH",
+     "quoteCode": "MRSH",
+     "name": "Marsh & McLennan Companies, Inc."
+    },
+    {
+     "symbol": "106.GD",
+     "code": "GD",
+     "quoteCode": "GD",
+     "name": "General Dynamics Corporation"
+    },
+    {
+     "symbol": "106.ICE",
+     "code": "ICE",
+     "quoteCode": "ICE",
+     "name": "Intercontinental Exchange, Inc."
+    },
+    {
+     "symbol": "106.PWR",
+     "code": "PWR",
+     "quoteCode": "PWR",
+     "name": "Quanta Services, Inc."
+    },
+    {
+     "symbol": "105.INTU",
+     "code": "INTU",
+     "quoteCode": "INTU",
+     "name": "Intuit Inc."
+    },
+    {
+     "symbol": "106.USB",
+     "code": "USB",
+     "quoteCode": "USB",
+     "name": "U.S. Bancorp"
+    },
+    {
+     "symbol": "106.EMR",
+     "code": "EMR",
+     "quoteCode": "EMR",
+     "name": "Emerson Electric Co."
+    },
+    {
+     "symbol": "106.WMB",
+     "code": "WMB",
+     "quoteCode": "WMB",
+     "name": "The Williams Companies, Inc."
+    },
+    {
+     "symbol": "106.ELV",
+     "code": "ELV",
+     "quoteCode": "ELV",
+     "name": "Elevance Health, Inc."
+    },
+    {
+     "symbol": "106.PNC",
+     "code": "PNC",
+     "quoteCode": "PNC",
+     "name": "The PNC Financial Services Group, Inc."
+    },
+    {
+     "symbol": "105.REGN",
+     "code": "REGN",
+     "quoteCode": "REGN",
+     "name": "Regeneron Pharmaceuticals, Inc."
+    },
+    {
+     "symbol": "106.JCI",
+     "code": "JCI",
+     "quoteCode": "JCI",
+     "name": "Johnson Controls International plc"
+    },
+    {
+     "symbol": "106.TT",
+     "code": "TT",
+     "quoteCode": "TT",
+     "name": "Trane Technologies plc"
+    },
+    {
+     "symbol": "105.CDNS",
+     "code": "CDNS",
+     "quoteCode": "CDNS",
+     "name": "Cadence Design Systems, Inc."
+    },
+    {
+     "symbol": "106.MMM",
+     "code": "MMM",
+     "quoteCode": "MMM",
+     "name": "3M Company"
+    },
+    {
+     "symbol": "106.FCX",
+     "code": "FCX",
+     "quoteCode": "FCX",
+     "name": "Freeport-McMoRan Inc."
+    },
+    {
+     "symbol": "105.SNPS",
+     "code": "SNPS",
+     "quoteCode": "SNPS",
+     "name": "Synopsys, Inc."
+    },
+    {
+     "symbol": "106.VRT",
+     "code": "VRT",
+     "quoteCode": "VRT",
+     "name": "Vertiv Holdings Co"
+    },
+    {
+     "symbol": "106.BX",
+     "code": "BX",
+     "quoteCode": "BX",
+     "name": "Blackstone Inc."
+    },
+    {
+     "symbol": "106.AMT",
+     "code": "AMT",
+     "quoteCode": "AMT",
+     "name": "American Tower Corporation"
+    },
+    {
+     "symbol": "106.EOG",
+     "code": "EOG",
+     "quoteCode": "EOG",
+     "name": "EOG Resources, Inc."
+    },
+    {
+     "symbol": "106.WM",
+     "code": "WM",
+     "quoteCode": "WM",
+     "name": "Waste Management, Inc."
+    },
+    {
+     "symbol": "105.CEG",
+     "code": "CEG",
+     "quoteCode": "CEG",
+     "name": "Constellation Energy Corporation"
+    },
+    {
+     "symbol": "105.MAR",
+     "code": "MAR",
+     "quoteCode": "MAR",
+     "name": "Marriott International, Inc."
+    },
+    {
+     "symbol": "105.FTNT",
+     "code": "FTNT",
+     "quoteCode": "FTNT",
+     "name": "Fortinet, Inc."
+    },
+    {
+     "symbol": "105.MDLZ",
+     "code": "MDLZ",
+     "quoteCode": "MDLZ",
+     "name": "Mondelez International, Inc."
+    },
+    {
+     "symbol": "106.TRV",
+     "code": "TRV",
+     "quoteCode": "TRV",
+     "name": "The Travelers Companies, Inc."
+    },
+    {
+     "symbol": "105.MRNA",
+     "code": "MRNA",
+     "quoteCode": "MRNA",
+     "name": "Moderna, Inc."
+    },
+    {
+     "symbol": "105.CMCSA",
+     "code": "CMCSA",
+     "quoteCode": "CMCSA",
+     "name": "Comcast Corporation"
+    },
+    {
+     "symbol": "106.MSI",
+     "code": "MSI",
+     "quoteCode": "MSI",
+     "name": "Motorola Solutions, Inc."
+    },
+    {
+     "symbol": "106.UPS",
+     "code": "UPS",
+     "quoteCode": "UPS",
+     "name": "United Parcel Service, Inc."
+    },
+    {
+     "symbol": "106.HLT",
+     "code": "HLT",
+     "quoteCode": "HLT",
+     "name": "Hilton Worldwide Holdings Inc."
+    },
+    {
+     "symbol": "106.SLB",
+     "code": "SLB",
+     "quoteCode": "SLB",
+     "name": "SLB N.V."
+    },
+    {
+     "symbol": "106.HWM",
+     "code": "HWM",
+     "quoteCode": "HWM",
+     "name": "Howmet Aerospace Inc."
+    },
+    {
+     "symbol": "106.CI",
+     "code": "CI",
+     "quoteCode": "CI",
+     "name": "The Cigna Group"
+    },
+    {
+     "symbol": "105.DDOG",
+     "code": "DDOG",
+     "quoteCode": "DDOG",
+     "name": "Datadog, Inc."
+    },
+    {
+     "symbol": "106.NSC",
+     "code": "NSC",
+     "quoteCode": "NSC",
+     "name": "Norfolk Southern Corporation"
+    },
+    {
+     "symbol": "106.GM",
+     "code": "GM",
+     "quoteCode": "GM",
+     "name": "General Motors Company"
+    },
+    {
+     "symbol": "106.ECL",
+     "code": "ECL",
+     "quoteCode": "ECL",
+     "name": "Ecolab Inc."
+    },
+    {
+     "symbol": "106.RCL",
+     "code": "RCL",
+     "quoteCode": "RCL",
+     "name": "Royal Caribbean Cruises Ltd."
+    },
+    {
+     "symbol": "106.CL",
+     "code": "CL",
+     "quoteCode": "CL",
+     "name": "Colgate-Palmolive Company"
+    },
+    {
+     "symbol": "106.SHW",
+     "code": "SHW",
+     "quoteCode": "SHW",
+     "name": "The Sherwin-Williams Company"
+    },
+    {
+     "symbol": "105.CTAS",
+     "code": "CTAS",
+     "quoteCode": "CTAS",
+     "name": "Cintas Corporation"
+    },
+    {
+     "symbol": "105.TMUS",
+     "code": "TMUS",
+     "quoteCode": "TMUS",
+     "name": "T-Mobile US, Inc."
+    },
+    {
+     "symbol": "106.NOC",
+     "code": "NOC",
+     "quoteCode": "NOC",
+     "name": "Northrop Grumman Corporation"
+    },
+    {
+     "symbol": "105.LITE",
+     "code": "LITE",
+     "quoteCode": "LITE",
+     "name": "Lumentum Holdings Inc."
+    },
+    {
+     "symbol": "106.MCO",
+     "code": "MCO",
+     "quoteCode": "MCO",
+     "name": "Moody's Corporation"
+    },
+    {
+     "symbol": "106.HPE",
+     "code": "HPE",
+     "quoteCode": "HPE",
+     "name": "Hewlett Packard Enterprise Company"
+    },
+    {
+     "symbol": "105.ROST",
+     "code": "ROST",
+     "quoteCode": "ROST",
+     "name": "Ross Stores, Inc."
+    },
+    {
+     "symbol": "106.URI",
+     "code": "URI",
+     "quoteCode": "URI",
+     "name": "United Rentals, Inc."
+    },
+    {
+     "symbol": "106.ITW",
+     "code": "ITW",
+     "quoteCode": "ITW",
+     "name": "Illinois Tool Works Inc."
+    },
+    {
+     "symbol": "105.ORLY",
+     "code": "ORLY",
+     "quoteCode": "ORLY",
+     "name": "O'Reilly Automotive, Inc."
+    },
+    {
+     "symbol": "105.AEP",
+     "code": "AEP",
+     "quoteCode": "AEP",
+     "name": "American Electric Power Company, Inc."
+    },
+    {
+     "symbol": "106.AJG",
+     "code": "AJG",
+     "quoteCode": "AJG",
+     "name": "Arthur J. Gallagher & Co."
+    },
+    {
+     "symbol": "106.APD",
+     "code": "APD",
+     "quoteCode": "APD",
+     "name": "Air Products and Chemicals, Inc."
+    },
+    {
+     "symbol": "106.SPG",
+     "code": "SPG",
+     "quoteCode": "SPG",
+     "name": "Simon Property Group, Inc."
+    },
+    {
+     "symbol": "106.TGT",
+     "code": "TGT",
+     "quoteCode": "TGT",
+     "name": "Target Corporation"
+    },
+    {
+     "symbol": "106.HCA",
+     "code": "HCA",
+     "quoteCode": "HCA",
+     "name": "HCA Healthcare, Inc."
+    },
+    {
+     "symbol": "105.HON",
+     "code": "HON",
+     "quoteCode": "HON",
+     "name": "Honeywell International Inc."
+    },
+    {
+     "symbol": "106.FDX",
+     "code": "FDX",
+     "quoteCode": "FDX",
+     "name": "FedEx Corporation"
+    },
+    {
+     "symbol": "105.ABNB",
+     "code": "ABNB",
+     "quoteCode": "ABNB",
+     "name": "Airbnb, Inc."
+    },
+    {
+     "symbol": "106.CMI",
+     "code": "CMI",
+     "quoteCode": "CMI",
+     "name": "Cummins Inc."
+    },
+    {
+     "symbol": "106.AON",
+     "code": "AON",
+     "quoteCode": "AON",
+     "name": "Aon plc"
+    },
+    {
+     "symbol": "105.MNST",
+     "code": "MNST",
+     "quoteCode": "MNST",
+     "name": "Monster Beverage Corporation"
+    },
+    {
+     "symbol": "106.TRGP",
+     "code": "TRGP",
+     "quoteCode": "TRGP",
+     "name": "Targa Resources Corp."
+    },
+    {
+     "symbol": "105.DASH",
+     "code": "DASH",
+     "quoteCode": "DASH",
+     "name": "DoorDash, Inc."
+    },
+    {
+     "symbol": "105.HOOD",
+     "code": "HOOD",
+     "quoteCode": "HOOD",
+     "name": "Robinhood Markets, Inc."
+    },
+    {
+     "symbol": "106.KMI",
+     "code": "KMI",
+     "quoteCode": "KMI",
+     "name": "Kinder Morgan, Inc."
+    },
+    {
+     "symbol": "106.ALL",
+     "code": "ALL",
+     "quoteCode": "ALL",
+     "name": "The Allstate Corporation"
+    },
+    {
+     "symbol": "106.KKR",
+     "code": "KKR",
+     "quoteCode": "KKR",
+     "name": "KKR & Co. Inc."
+    },
+    {
+     "symbol": "105.NXPI",
+     "code": "NXPI",
+     "quoteCode": "NXPI",
+     "name": "NXP Semiconductors N.V."
+    },
+    {
+     "symbol": "106.DLR",
+     "code": "DLR",
+     "quoteCode": "DLR",
+     "name": "Digital Realty Trust, Inc."
+    },
+    {
+     "symbol": "106.TDG",
+     "code": "TDG",
+     "quoteCode": "TDG",
+     "name": "TransDigm Group Incorporated"
+    },
+    {
+     "symbol": "106.COR",
+     "code": "COR",
+     "quoteCode": "COR",
+     "name": "Cencora, Inc."
+    },
+    {
+     "symbol": "106.NUE",
+     "code": "NUE",
+     "quoteCode": "NUE",
+     "name": "Nucor Corporation"
+    },
+    {
+     "symbol": "105.APP",
+     "code": "APP",
+     "quoteCode": "APP",
+     "name": "AppLovin Corporation"
+    },
+    {
+     "symbol": "106.TEL",
+     "code": "TEL",
+     "quoteCode": "TEL",
+     "name": "TE Connectivity plc"
+    },
+    {
+     "symbol": "106.OKE",
+     "code": "OKE",
+     "quoteCode": "OKE",
+     "name": "ONEOK, Inc."
+    },
+    {
+     "symbol": "106.BSX",
+     "code": "BSX",
+     "quoteCode": "BSX",
+     "name": "Boston Scientific Corporation"
+    },
+    {
+     "symbol": "106.CRH",
+     "code": "CRH",
+     "quoteCode": "CRH",
+     "name": "CRH plc"
+    },
+    {
+     "symbol": "106.BE",
+     "code": "BE",
+     "quoteCode": "BE",
+     "name": "Bloom Energy Corporation"
+    },
+    {
+     "symbol": "105.FAST",
+     "code": "FAST",
+     "quoteCode": "FAST",
+     "name": "Fastenal Company"
+    },
+    {
+     "symbol": "105.MPWR",
+     "code": "MPWR",
+     "quoteCode": "MPWR",
+     "name": "Monolithic Power Systems, Inc."
+    },
+    {
+     "symbol": "106.TFC",
+     "code": "TFC",
+     "quoteCode": "TFC",
+     "name": "Truist Financial Corporation"
+    },
+    {
+     "symbol": "106.GWW",
+     "code": "GWW",
+     "quoteCode": "GWW",
+     "name": "W.W. Grainger, Inc."
+    },
+    {
+     "symbol": "106.D",
+     "code": "D",
+     "quoteCode": "D",
+     "name": "Dominion Energy, Inc."
+    },
+    {
+     "symbol": "106.CAH",
+     "code": "CAH",
+     "quoteCode": "CAH",
+     "name": "Cardinal Health, Inc."
+    },
+    {
+     "symbol": "106.DVN",
+     "code": "DVN",
+     "quoteCode": "DVN",
+     "name": "Devon Energy Corporation"
+    },
+    {
+     "symbol": "106.SRE",
+     "code": "SRE",
+     "quoteCode": "SRE",
+     "name": "Sempra"
+    },
+    {
+     "symbol": "106.AME",
+     "code": "AME",
+     "quoteCode": "AME",
+     "name": "AMETEK, Inc."
+    },
+    {
+     "symbol": "106.AFL",
+     "code": "AFL",
+     "quoteCode": "AFL",
+     "name": "Aflac Incorporated"
+    },
+    {
+     "symbol": "105.BKR",
+     "code": "BKR",
+     "quoteCode": "BKR",
+     "name": "Baker Hughes Company"
+    },
+    {
+     "symbol": "106.APO",
+     "code": "APO",
+     "quoteCode": "APO",
+     "name": "Apollo Global Management, Inc."
+    },
+    {
+     "symbol": "106.PSA",
+     "code": "PSA",
+     "quoteCode": "PSA",
+     "name": "Public Storage"
+    },
+    {
+     "symbol": "106.O",
+     "code": "O",
+     "quoteCode": "O",
+     "name": "Realty Income Corporation"
+    },
+    {
+     "symbol": "106.BDX",
+     "code": "BDX",
+     "quoteCode": "BDX",
+     "name": "Becton, Dickinson and Company"
+    },
+    {
+     "symbol": "105.PCAR",
+     "code": "PCAR",
+     "quoteCode": "PCAR",
+     "name": "PACCAR Inc"
+    },
+    {
+     "symbol": "106.MET",
+     "code": "MET",
+     "quoteCode": "MET",
+     "name": "MetLife, Inc."
+    },
+    {
+     "symbol": "106.EW",
+     "code": "EW",
+     "quoteCode": "EW",
+     "name": "Edwards Lifesciences Corporation"
+    },
+    {
+     "symbol": "105.ADSK",
+     "code": "ADSK",
+     "quoteCode": "ADSK",
+     "name": "Autodesk, Inc."
+    },
+    {
+     "symbol": "106.KEYS",
+     "code": "KEYS",
+     "quoteCode": "KEYS",
+     "name": "Keysight Technologies, Inc."
+    },
+    {
+     "symbol": "106.LHX",
+     "code": "LHX",
+     "quoteCode": "LHX",
+     "name": "L3Harris Technologies, Inc."
+    },
+    {
+     "symbol": "106.AZO",
+     "code": "AZO",
+     "quoteCode": "AZO",
+     "name": "AutoZone, Inc."
+    },
+    {
+     "symbol": "106.ETR",
+     "code": "ETR",
+     "quoteCode": "ETR",
+     "name": "Entergy Corporation"
+    },
+    {
+     "symbol": "105.XEL",
+     "code": "XEL",
+     "quoteCode": "XEL",
+     "name": "Xcel Energy Inc."
+    },
+    {
+     "symbol": "106.HUM",
+     "code": "HUM",
+     "quoteCode": "HUM",
+     "name": "Humana Inc."
+    },
+    {
+     "symbol": "106.A",
+     "code": "A",
+     "quoteCode": "A",
+     "name": "Agilent Technologies, Inc."
+    },
+    {
+     "symbol": "106.CVNA",
+     "code": "CVNA",
+     "quoteCode": "CVNA",
+     "name": "Carvana Co."
+    },
+    {
+     "symbol": "105.HONA",
+     "code": "HONA",
+     "quoteCode": "HONA",
+     "name": "Honeywell Aerospace Inc."
+    },
+    {
+     "symbol": "105.KDP",
+     "code": "KDP",
+     "quoteCode": "KDP",
+     "name": "Keurig Dr Pepper Inc."
+    },
+    {
+     "symbol": "106.FITB",
+     "code": "FITB",
+     "quoteCode": "FITB",
+     "name": "Fifth Third Bancorp"
+    },
+    {
+     "symbol": "105.EBAY",
+     "code": "EBAY",
+     "quoteCode": "EBAY",
+     "name": "eBay Inc."
+    },
+    {
+     "symbol": "105.PYPL",
+     "code": "PYPL",
+     "quoteCode": "PYPL",
+     "name": "PayPal Holdings, Inc."
+    },
+    {
+     "symbol": "106.ROK",
+     "code": "ROK",
+     "quoteCode": "ROK",
+     "name": "Rockwell Automation, Inc."
+    },
+    {
+     "symbol": "106.VYLR",
+     "code": "VYLR",
+     "quoteCode": "VYLR",
+     "name": "Vylor Inc."
+    },
+    {
+     "symbol": "106.F",
+     "code": "F",
+     "quoteCode": "F",
+     "name": "Ford Motor Company"
+    },
+    {
+     "symbol": "105.EXC",
+     "code": "EXC",
+     "quoteCode": "EXC",
+     "name": "Exelon Corporation"
+    },
+    {
+     "symbol": "106.RSG",
+     "code": "RSG",
+     "quoteCode": "RSG",
+     "name": "Republic Services, Inc."
+    },
+    {
+     "symbol": "106.DAL",
+     "code": "DAL",
+     "quoteCode": "DAL",
+     "name": "Delta Air Lines, Inc."
+    },
+    {
+     "symbol": "106.WAB",
+     "code": "WAB",
+     "quoteCode": "WAB",
+     "name": "Westinghouse Air Brake Technologies Corporation"
+    },
+    {
+     "symbol": "105.NDAQ",
+     "code": "NDAQ",
+     "quoteCode": "NDAQ",
+     "name": "Nasdaq, Inc."
+    },
+    {
+     "symbol": "106.VEEV",
+     "code": "VEEV",
+     "quoteCode": "VEEV",
+     "name": "Veeva Systems Inc."
+    },
+    {
+     "symbol": "106.OXY",
+     "code": "OXY",
+     "quoteCode": "OXY",
+     "name": "Occidental Petroleum Corporation"
+    },
+    {
+     "symbol": "106.NKE",
+     "code": "NKE",
+     "quoteCode": "NKE",
+     "name": "NIKE, Inc."
+    },
+    {
+     "symbol": "106.STT",
+     "code": "STT",
+     "quoteCode": "STT",
+     "name": "State Street Corporation"
+    },
+    {
+     "symbol": "106.FERG",
+     "code": "FERG",
+     "quoteCode": "FERG",
+     "name": "Ferguson Enterprises Inc."
+    },
+    {
+     "symbol": "105.ROP",
+     "code": "ROP",
+     "quoteCode": "ROP",
+     "name": "Roper Technologies, Inc."
+    },
+    {
+     "symbol": "106.MSCI",
+     "code": "MSCI",
+     "quoteCode": "MSCI",
+     "name": "MSCI Inc."
+    },
+    {
+     "symbol": "106.WAT",
+     "code": "WAT",
+     "quoteCode": "WAT",
+     "name": "Waters Corporation"
+    },
+    {
+     "symbol": "106.CIEN",
+     "code": "CIEN",
+     "quoteCode": "CIEN",
+     "name": "Ciena Corporation"
+    },
+    {
+     "symbol": "106.GRMN",
+     "code": "GRMN",
+     "quoteCode": "GRMN",
+     "name": "Garmin Ltd."
+    },
+    {
+     "symbol": "106.VMRK",
+     "code": "VMRK",
+     "quoteCode": "VMRK",
+     "name": "Vivmark Residential"
+    },
+    {
+     "symbol": "106.CARR",
+     "code": "CARR",
+     "quoteCode": "CARR",
+     "name": "Carrier Global Corporation"
+    },
+    {
+     "symbol": "106.IQV",
+     "code": "IQV",
+     "quoteCode": "IQV",
+     "name": "IQVIA Holdings Inc."
+    },
+    {
+     "symbol": "105.IDXX",
+     "code": "IDXX",
+     "quoteCode": "IDXX",
+     "name": "IDEXX Laboratories, Inc."
+    },
+    {
+     "symbol": "106.VST",
+     "code": "VST",
+     "quoteCode": "VST",
+     "name": "Vistra Corp."
+    },
+    {
+     "symbol": "106.VTR",
+     "code": "VTR",
+     "quoteCode": "VTR",
+     "name": "Ventas, Inc."
+    },
+    {
+     "symbol": "106.FIX",
+     "code": "FIX",
+     "quoteCode": "FIX",
+     "name": "Comfort Systems USA, Inc."
+    },
+    {
+     "symbol": "105.FANG",
+     "code": "FANG",
+     "quoteCode": "FANG",
+     "name": "Diamondback Energy, Inc."
+    },
+    {
+     "symbol": "106.AMP",
+     "code": "AMP",
+     "quoteCode": "AMP",
+     "name": "Ameriprise Financial, Inc."
+    },
+    {
+     "symbol": "106.ED",
+     "code": "ED",
+     "quoteCode": "ED",
+     "name": "Consolidated Edison, Inc."
+    },
+    {
+     "symbol": "105.TER",
+     "code": "TER",
+     "quoteCode": "TER",
+     "name": "Teradyne, Inc."
+    },
+    {
+     "symbol": "106.AIG",
+     "code": "AIG",
+     "quoteCode": "AIG",
+     "name": "American International Group, Inc."
+    },
+    {
+     "symbol": "106.YUM",
+     "code": "YUM",
+     "quoteCode": "YUM",
+     "name": "Yum! Brands, Inc."
+    },
+    {
+     "symbol": "106.P",
+     "code": "P",
+     "quoteCode": "P",
+     "name": "Everpure, Inc."
+    },
+    {
+     "symbol": "105.MCHP",
+     "code": "MCHP",
+     "quoteCode": "MCHP",
+     "name": "Microchip Technology Incorporated"
+    },
+    {
+     "symbol": "106.COHR",
+     "code": "COHR",
+     "quoteCode": "COHR",
+     "name": "Coherent Corp."
+    },
+    {
+     "symbol": "106.XYZ",
+     "code": "XYZ",
+     "quoteCode": "XYZ",
+     "name": "Block, Inc."
+    },
+    {
+     "symbol": "106.CMG",
+     "code": "CMG",
+     "quoteCode": "CMG",
+     "name": "Chipotle Mexican Grill, Inc."
+    },
+    {
+     "symbol": "106.PRU",
+     "code": "PRU",
+     "quoteCode": "PRU",
+     "name": "Prudential Financial, Inc."
+    },
+    {
+     "symbol": "106.SYY",
+     "code": "SYY",
+     "quoteCode": "SYY",
+     "name": "Sysco Corporation"
+    },
+    {
+     "symbol": "105.WDAY",
+     "code": "WDAY",
+     "quoteCode": "WDAY",
+     "name": "Workday, Inc."
+    },
+    {
+     "symbol": "105.NTAP",
+     "code": "NTAP",
+     "quoteCode": "NTAP",
+     "name": "NetApp, Inc."
+    },
+    {
+     "symbol": "106.KR",
+     "code": "KR",
+     "quoteCode": "KR",
+     "name": "The Kroger Co."
+    },
+    {
+     "symbol": "106.WEC",
+     "code": "WEC",
+     "quoteCode": "WEC",
+     "name": "WEC Energy Group, Inc."
+    },
+    {
+     "symbol": "106.CCI",
+     "code": "CCI",
+     "quoteCode": "CCI",
+     "name": "Crown Castle Inc."
+    },
+    {
+     "symbol": "105.BIIB",
+     "code": "BIIB",
+     "quoteCode": "BIIB",
+     "name": "Biogen Inc."
+    },
+    {
+     "symbol": "106.ADM",
+     "code": "ADM",
+     "quoteCode": "ADM",
+     "name": "Archer-Daniels-Midland Company"
+    },
+    {
+     "symbol": "106.KVUE",
+     "code": "KVUE",
+     "quoteCode": "KVUE",
+     "name": "Kenvue Inc."
+    },
+    {
+     "symbol": "106.PEG",
+     "code": "PEG",
+     "quoteCode": "PEG",
+     "name": "Public Service Enterprise Group Incorporated"
+    },
+    {
+     "symbol": "106.DHI",
+     "code": "DHI",
+     "quoteCode": "DHI",
+     "name": "D.R. Horton, Inc."
+    },
+    {
+     "symbol": "106.CCL",
+     "code": "CCL",
+     "quoteCode": "CCL",
+     "name": "Carnival Corporation Ltd."
+    },
+    {
+     "symbol": "106.CBRE",
+     "code": "CBRE",
+     "quoteCode": "CBRE",
+     "name": "CBRE Group, Inc."
+    },
+    {
+     "symbol": "106.VMC",
+     "code": "VMC",
+     "quoteCode": "VMC",
+     "name": "Vulcan Materials Company"
+    },
+    {
+     "symbol": "105.ACGL",
+     "code": "ACGL",
+     "quoteCode": "ACGL",
+     "name": "Arch Capital Group Ltd."
+    },
+    {
+     "symbol": "105.KMB",
+     "code": "KMB",
+     "quoteCode": "KMB",
+     "name": "Kimberly-Clark Corporation"
+    },
+    {
+     "symbol": "106.HIG",
+     "code": "HIG",
+     "quoteCode": "HIG",
+     "name": "The Hartford Insurance Group, Inc."
+    },
+    {
+     "symbol": "105.PAYX",
+     "code": "PAYX",
+     "quoteCode": "PAYX",
+     "name": "Paychex, Inc."
+    },
+    {
+     "symbol": "105.ILMN",
+     "code": "ILMN",
+     "quoteCode": "ILMN",
+     "name": "Illumina, Inc."
+    },
+    {
+     "symbol": "107.CBOE",
+     "code": "CBOE",
+     "quoteCode": "CBOE",
+     "name": "Cboe Global Markets, Inc."
+    },
+    {
+     "symbol": "105.IBKR",
+     "code": "IBKR",
+     "quoteCode": "IBKR",
+     "name": "Interactive Brokers Group, Inc."
+    },
+    {
+     "symbol": "105.AXON",
+     "code": "AXON",
+     "quoteCode": "AXON",
+     "name": "Axon Enterprise, Inc."
+    },
+    {
+     "symbol": "106.EQT",
+     "code": "EQT",
+     "quoteCode": "EQT",
+     "name": "EQT Corporation"
+    },
+    {
+     "symbol": "106.IRM",
+     "code": "IRM",
+     "quoteCode": "IRM",
+     "name": "Iron Mountain Incorporated"
+    },
+    {
+     "symbol": "105.GEHC",
+     "code": "GEHC",
+     "quoteCode": "GEHC",
+     "name": "GE HealthCare Technologies Inc."
+    },
+    {
+     "symbol": "105.UAL",
+     "code": "UAL",
+     "quoteCode": "UAL",
+     "name": "United Airlines Holdings, Inc."
+    },
+    {
+     "symbol": "106.CNC",
+     "code": "CNC",
+     "quoteCode": "CNC",
+     "name": "Centene Corporation"
+    },
+    {
+     "symbol": "106.MTD",
+     "code": "MTD",
+     "quoteCode": "MTD",
+     "name": "Mettler-Toledo International Inc."
+    },
+    {
+     "symbol": "105.STLD",
+     "code": "STLD",
+     "quoteCode": "STLD",
+     "name": "Steel Dynamics, Inc."
+    },
+    {
+     "symbol": "105.TTWO",
+     "code": "TTWO",
+     "quoteCode": "TTWO",
+     "name": "Take-Two Interactive Software, Inc."
+    },
+    {
+     "symbol": "106.RMD",
+     "code": "RMD",
+     "quoteCode": "RMD",
+     "name": "ResMed Inc."
+    },
+    {
+     "symbol": "106.ZTS",
+     "code": "ZTS",
+     "quoteCode": "ZTS",
+     "name": "Zoetis Inc."
+    },
+    {
+     "symbol": "105.EXPE",
+     "code": "EXPE",
+     "quoteCode": "EXPE",
+     "name": "Expedia Group, Inc."
+    },
+    {
+     "symbol": "106.MLM",
+     "code": "MLM",
+     "quoteCode": "MLM",
+     "name": "Martin Marietta Materials, Inc."
+    },
+    {
+     "symbol": "105.ODFL",
+     "code": "ODFL",
+     "quoteCode": "ODFL",
+     "name": "Old Dominion Freight Line, Inc."
+    },
+    {
+     "symbol": "106.EXR",
+     "code": "EXR",
+     "quoteCode": "EXR",
+     "name": "Extra Space Storage Inc."
+    },
+    {
+     "symbol": "105.HBAN",
+     "code": "HBAN",
+     "quoteCode": "HBAN",
+     "name": "Huntington Bancshares Incorporated"
+    },
+    {
+     "symbol": "105.COIN",
+     "code": "COIN",
+     "quoteCode": "COIN",
+     "name": "Coinbase Global, Inc."
+    },
+    {
+     "symbol": "105.FLEX",
+     "code": "FLEX",
+     "quoteCode": "FLEX",
+     "name": "Flex Ltd."
+    },
+    {
+     "symbol": "106.MTB",
+     "code": "MTB",
+     "quoteCode": "MTB",
+     "name": "M&T Bank Corporation"
+    },
+    {
+     "symbol": "106.TWLO",
+     "code": "TWLO",
+     "quoteCode": "TWLO",
+     "name": "Twilio Inc."
+    },
+    {
+     "symbol": "105.DXCM",
+     "code": "DXCM",
+     "quoteCode": "DXCM",
+     "name": "DexCom, Inc."
+    },
+    {
+     "symbol": "105.NTRS",
+     "code": "NTRS",
+     "quoteCode": "NTRS",
+     "name": "Northern Trust Corporation"
+    },
+    {
+     "symbol": "106.AEE",
+     "code": "AEE",
+     "quoteCode": "AEE",
+     "name": "Ameren Corporation"
+    },
+    {
+     "symbol": "106.TDY",
+     "code": "TDY",
+     "quoteCode": "TDY",
+     "name": "Teledyne Technologies Incorporated"
+    },
+    {
+     "symbol": "106.HAL",
+     "code": "HAL",
+     "quoteCode": "HAL",
+     "name": "Halliburton Company"
+    },
+    {
+     "symbol": "105.WTW",
+     "code": "WTW",
+     "quoteCode": "WTW",
+     "name": "Willis Towers Watson Public Limited Company"
+    },
+    {
+     "symbol": "106.EME",
+     "code": "EME",
+     "quoteCode": "EME",
+     "name": "EMCOR Group, Inc."
+    },
+    {
+     "symbol": "106.WSM",
+     "code": "WSM",
+     "quoteCode": "WSM",
+     "name": "Williams-Sonoma, Inc."
+    },
+    {
+     "symbol": "105.CTSH",
+     "code": "CTSH",
+     "quoteCode": "CTSH",
+     "name": "Cognizant Technology Solutions Corporation"
+    },
+    {
+     "symbol": "106.DG",
+     "code": "DG",
+     "quoteCode": "DG",
+     "name": "Dollar General Corporation"
+    },
+    {
+     "symbol": "106.WST",
+     "code": "WST",
+     "quoteCode": "WST",
+     "name": "West Pharmaceutical Services, Inc."
+    },
+    {
+     "symbol": "106.LH",
+     "code": "LH",
+     "quoteCode": "LH",
+     "name": "Labcorp Holdings Inc."
+    },
+    {
+     "symbol": "106.ATO",
+     "code": "ATO",
+     "quoteCode": "ATO",
+     "name": "Atmos Energy Corporation"
+    },
+    {
+     "symbol": "106.PCG",
+     "code": "PCG",
+     "quoteCode": "PCG",
+     "name": "PG&E Corporation"
+    },
+    {
+     "symbol": "106.OTIS",
+     "code": "OTIS",
+     "quoteCode": "OTIS",
+     "name": "Otis Worldwide Corporation"
+    },
+    {
+     "symbol": "106.ARES",
+     "code": "ARES",
+     "quoteCode": "ARES",
+     "name": "Ares Management Corporation"
+    },
+    {
+     "symbol": "106.AWK",
+     "code": "AWK",
+     "quoteCode": "AWK",
+     "name": "American Water Works Company, Inc."
+    },
+    {
+     "symbol": "106.JBL",
+     "code": "JBL",
+     "quoteCode": "JBL",
+     "name": "Jabil Inc."
+    },
+    {
+     "symbol": "106.DTE",
+     "code": "DTE",
+     "quoteCode": "DTE",
+     "name": "DTE Energy Company"
+    },
+    {
+     "symbol": "106.LYV",
+     "code": "LYV",
+     "quoteCode": "LYV",
+     "name": "Live Nation Entertainment, Inc."
+    },
+    {
+     "symbol": "106.DOV",
+     "code": "DOV",
+     "quoteCode": "DOV",
+     "name": "Dover Corporation"
+    },
+    {
+     "symbol": "106.DGX",
+     "code": "DGX",
+     "quoteCode": "DGX",
+     "name": "Quest Diagnostics Incorporated"
+    },
+    {
+     "symbol": "105.ON",
+     "code": "ON",
+     "quoteCode": "ON",
+     "name": "ON Semiconductor Corporation"
+    },
+    {
+     "symbol": "105.CINF",
+     "code": "CINF",
+     "quoteCode": "CINF",
+     "name": "Cincinnati Financial Corporation"
+    },
+    {
+     "symbol": "106.CNP",
+     "code": "CNP",
+     "quoteCode": "CNP",
+     "name": "CenterPoint Energy, Inc."
+    },
+    {
+     "symbol": "106.IR",
+     "code": "IR",
+     "quoteCode": "IR",
+     "name": "Ingersoll Rand Inc."
+    },
+    {
+     "symbol": "106.RJF",
+     "code": "RJF",
+     "quoteCode": "RJF",
+     "name": "Raymond James Financial, Inc."
+    },
+    {
+     "symbol": "105.ULTA",
+     "code": "ULTA",
+     "quoteCode": "ULTA",
+     "name": "Ulta Beauty, Inc."
+    },
+    {
+     "symbol": "106.VLTO",
+     "code": "VLTO",
+     "quoteCode": "VLTO",
+     "name": "Veralto Corporation"
+    },
+    {
+     "symbol": "106.CFG",
+     "code": "CFG",
+     "quoteCode": "CFG",
+     "name": "Citizens Financial Group, Inc."
+    },
+    {
+     "symbol": "106.EL",
+     "code": "EL",
+     "quoteCode": "EL",
+     "name": "The Estée Lauder Companies Inc."
+    },
+    {
+     "symbol": "106.PPL",
+     "code": "PPL",
+     "quoteCode": "PPL",
+     "name": "PPL Corporation"
+    },
+    {
+     "symbol": "106.VICI",
+     "code": "VICI",
+     "quoteCode": "VICI",
+     "name": "VICI Properties Inc."
+    },
+    {
+     "symbol": "105.FISV",
+     "code": "FISV",
+     "quoteCode": "FISV",
+     "name": "Fiserv, Inc."
+    },
+    {
+     "symbol": "106.PPG",
+     "code": "PPG",
+     "quoteCode": "PPG",
+     "name": "PPG Industries, Inc."
+    },
+    {
+     "symbol": "106.HPQ",
+     "code": "HPQ",
+     "quoteCode": "HPQ",
+     "name": "HP Inc."
+    },
+    {
+     "symbol": "106.CPAY",
+     "code": "CPAY",
+     "quoteCode": "CPAY",
+     "name": "Corpay, Inc."
+    },
+    {
+     "symbol": "106.EXPD",
+     "code": "EXPD",
+     "quoteCode": "EXPD",
+     "name": "Expeditors International of Washington, Inc."
+    },
+    {
+     "symbol": "106.ES",
+     "code": "ES",
+     "quoteCode": "ES",
+     "name": "Eversource Energy"
+    },
+    {
+     "symbol": "105.VRSK",
+     "code": "VRSK",
+     "quoteCode": "VRSK",
+     "name": "Verisk Analytics, Inc."
+    },
+    {
+     "symbol": "105.DLTR",
+     "code": "DLTR",
+     "quoteCode": "DLTR",
+     "name": "Dollar Tree, Inc."
+    },
+    {
+     "symbol": "106.CHD",
+     "code": "CHD",
+     "quoteCode": "CHD",
+     "name": "Church & Dwight Co., Inc."
+    },
+    {
+     "symbol": "105.CASY",
+     "code": "CASY",
+     "quoteCode": "CASY",
+     "name": "Casey's General Stores, Inc."
+    },
+    {
+     "symbol": "105.CPRT",
+     "code": "CPRT",
+     "quoteCode": "CPRT",
+     "name": "Copart, Inc."
+    },
+    {
+     "symbol": "106.DOW",
+     "code": "DOW",
+     "quoteCode": "DOW",
+     "name": "Dow Inc."
+    },
+    {
+     "symbol": "106.DRI",
+     "code": "DRI",
+     "quoteCode": "DRI",
+     "name": "Darden Restaurants, Inc."
+    },
+    {
+     "symbol": "105.VRSN",
+     "code": "VRSN",
+     "quoteCode": "VRSN",
+     "name": "VeriSign, Inc."
+    },
+    {
+     "symbol": "106.FE",
+     "code": "FE",
+     "quoteCode": "FE",
+     "name": "FirstEnergy Corp."
+    },
+    {
+     "symbol": "106.Q",
+     "code": "Q",
+     "quoteCode": "Q",
+     "name": "Qnity Electronics, Inc."
+    },
+    {
+     "symbol": "106.RF",
+     "code": "RF",
+     "quoteCode": "RF",
+     "name": "Regions Financial Corporation"
+    },
+    {
+     "symbol": "106.SYF",
+     "code": "SYF",
+     "quoteCode": "SYF",
+     "name": "Synchrony Financial"
+    },
+    {
+     "symbol": "106.HSY",
+     "code": "HSY",
+     "quoteCode": "HSY",
+     "name": "The Hershey Company"
+    },
+    {
+     "symbol": "106.IFF",
+     "code": "IFF",
+     "quoteCode": "IFF",
+     "name": "International Flavors & Fragrances Inc."
+    },
+    {
+     "symbol": "106.PHM",
+     "code": "PHM",
+     "quoteCode": "PHM",
+     "name": "PulteGroup, Inc."
+    },
+    {
+     "symbol": "106.TPR",
+     "code": "TPR",
+     "quoteCode": "TPR",
+     "name": "Tapestry, Inc."
+    },
+    {
+     "symbol": "106.PKG",
+     "code": "PKG",
+     "quoteCode": "PKG",
+     "name": "Packaging Corporation of America"
+    },
+    {
+     "symbol": "106.EIX",
+     "code": "EIX",
+     "quoteCode": "EIX",
+     "name": "Edison International"
+    },
+    {
+     "symbol": "106.SW",
+     "code": "SW",
+     "quoteCode": "SW",
+     "name": "Smurfit Westrock Plc"
+    },
+    {
+     "symbol": "106.HUBB",
+     "code": "HUBB",
+     "quoteCode": "HUBB",
+     "name": "Hubbell Incorporated"
+    },
+    {
+     "symbol": "106.STE",
+     "code": "STE",
+     "quoteCode": "STE",
+     "name": "STERIS plc"
+    },
+    {
+     "symbol": "105.TROW",
+     "code": "TROW",
+     "quoteCode": "TROW",
+     "name": "T. Rowe Price Group, Inc."
+    },
+    {
+     "symbol": "106.OMC",
+     "code": "OMC",
+     "quoteCode": "OMC",
+     "name": "Omnicom Group Inc."
+    },
+    {
+     "symbol": "106.CMS",
+     "code": "CMS",
+     "quoteCode": "CMS",
+     "name": "CMS Energy Corporation"
+    },
+    {
+     "symbol": "105.VTRS",
+     "code": "VTRS",
+     "quoteCode": "VTRS",
+     "name": "Viatris Inc."
+    },
+    {
+     "symbol": "106.AMCR",
+     "code": "AMCR",
+     "quoteCode": "AMCR",
+     "name": "Amcor plc"
+    },
+    {
+     "symbol": "105.PFG",
+     "code": "PFG",
+     "quoteCode": "PFG",
+     "name": "Principal Financial Group, Inc."
+    },
+    {
+     "symbol": "106.EFX",
+     "code": "EFX",
+     "quoteCode": "EFX",
+     "name": "Equifax Inc."
+    },
+    {
+     "symbol": "106.GPN",
+     "code": "GPN",
+     "quoteCode": "GPN",
+     "name": "Global Payments Inc."
+    },
+    {
+     "symbol": "106.XYL",
+     "code": "XYL",
+     "quoteCode": "XYL",
+     "name": "Xylem Inc."
+    },
+    {
+     "symbol": "106.NI",
+     "code": "NI",
+     "quoteCode": "NI",
+     "name": "NiSource Inc."
+    },
+    {
+     "symbol": "106.KHC",
+     "code": "KHC",
+     "quoteCode": "KHC",
+     "name": "The Kraft Heinz Company"
+    },
+    {
+     "symbol": "105.PTC",
+     "code": "PTC",
+     "quoteCode": "PTC",
+     "name": "PTC Inc."
+    },
+    {
+     "symbol": "105.EXE",
+     "code": "EXE",
+     "quoteCode": "EXE",
+     "name": "Expand Energy Corporation"
+    },
+    {
+     "symbol": "106.LUV",
+     "code": "LUV",
+     "quoteCode": "LUV",
+     "name": "Southwest Airlines Co."
+    },
+    {
+     "symbol": "105.INCY",
+     "code": "INCY",
+     "quoteCode": "INCY",
+     "name": "Incyte Corporation"
+    },
+    {
+     "symbol": "106.BR",
+     "code": "BR",
+     "quoteCode": "BR",
+     "name": "Broadridge Financial Solutions, Inc."
+    },
+    {
+     "symbol": "106.NRG",
+     "code": "NRG",
+     "quoteCode": "NRG",
+     "name": "NRG Energy, Inc."
+    },
+    {
+     "symbol": "106.STZ",
+     "code": "STZ",
+     "quoteCode": "STZ",
+     "name": "Constellation Brands, Inc."
+    },
+    {
+     "symbol": "106.BRO",
+     "code": "BRO",
+     "quoteCode": "BRO",
+     "name": "Brown & Brown, Inc."
+    },
+    {
+     "symbol": "105.SWKS",
+     "code": "SWKS",
+     "quoteCode": "SWKS",
+     "name": "Skyworks Solutions, Inc."
+    },
+    {
+     "symbol": "106.FIS",
+     "code": "FIS",
+     "quoteCode": "FIS",
+     "name": "Fidelity National Information Services, Inc."
+    },
+    {
+     "symbol": "106.FTV",
+     "code": "FTV",
+     "quoteCode": "FTV",
+     "name": "Fortive Corporation"
+    },
+    {
+     "symbol": "105.SBAC",
+     "code": "SBAC",
+     "quoteCode": "SBAC",
+     "name": "SBA Communications Corporation"
+    },
+    {
+     "symbol": "105.EVRG",
+     "code": "EVRG",
+     "quoteCode": "EVRG",
+     "name": "Evergy, Inc."
+    },
+    {
+     "symbol": "106.TPL",
+     "code": "TPL",
+     "quoteCode": "TPL",
+     "name": "Texas Pacific Land Corporation"
+    },
+    {
+     "symbol": "106.IP",
+     "code": "IP",
+     "quoteCode": "IP",
+     "name": "International Paper Company"
+    },
+    {
+     "symbol": "105.FFIV",
+     "code": "FFIV",
+     "quoteCode": "FFIV",
+     "name": "F5, Inc."
+    },
+    {
+     "symbol": "106.KEY",
+     "code": "KEY",
+     "quoteCode": "KEY",
+     "name": "KeyCorp"
+    },
+    {
+     "symbol": "105.CDW",
+     "code": "CDW",
+     "quoteCode": "CDW",
+     "name": "CDW Corporation"
+    },
+    {
+     "symbol": "106.DD",
+     "code": "DD",
+     "quoteCode": "DD",
+     "name": "DuPont de Nemours, Inc."
+    },
+    {
+     "symbol": "106.BBY",
+     "code": "BBY",
+     "quoteCode": "BBY",
+     "name": "Best Buy Co., Inc."
+    },
+    {
+     "symbol": "105.APA",
+     "code": "APA",
+     "quoteCode": "APA",
+     "name": "APA Corporation"
+    },
+    {
+     "symbol": "105.FSLR",
+     "code": "FSLR",
+     "quoteCode": "FSLR",
+     "name": "First Solar, Inc."
+    },
+    {
+     "symbol": "106.CF",
+     "code": "CF",
+     "quoteCode": "CF",
+     "name": "CF Industries Holdings, Inc."
+    },
+    {
+     "symbol": "105.SMCI",
+     "code": "SMCI",
+     "quoteCode": "SMCI",
+     "name": "Super Micro Computer, Inc."
+    },
+    {
+     "symbol": "105.LNT",
+     "code": "LNT",
+     "quoteCode": "LNT",
+     "name": "Alliant Energy Corporation"
+    },
+    {
+     "symbol": "106.SNA",
+     "code": "SNA",
+     "quoteCode": "SNA",
+     "name": "Snap-on Incorporated"
+    },
+    {
+     "symbol": "106.GIS",
+     "code": "GIS",
+     "quoteCode": "GIS",
+     "name": "General Mills, Inc."
+    },
+    {
+     "symbol": "106.J",
+     "code": "J",
+     "quoteCode": "J",
+     "name": "Jacobs Solutions Inc."
+    },
+    {
+     "symbol": "106.L",
+     "code": "L",
+     "quoteCode": "L",
+     "name": "Loews Corporation"
+    },
+    {
+     "symbol": "106.LDOS",
+     "code": "LDOS",
+     "quoteCode": "LDOS",
+     "name": "Leidos Holdings, Inc."
+    },
+    {
+     "symbol": "106.ZBH",
+     "code": "ZBH",
+     "quoteCode": "ZBH",
+     "name": "Zimmer Biomet Holdings, Inc."
+    },
+    {
+     "symbol": "106.LYB",
+     "code": "LYB",
+     "quoteCode": "LYB",
+     "name": "LyondellBasell Industries N.V."
+    },
+    {
+     "symbol": "105.TSCO",
+     "code": "TSCO",
+     "quoteCode": "TSCO",
+     "name": "Tractor Supply Company"
+    },
+    {
+     "symbol": "106.BALL",
+     "code": "BALL",
+     "quoteCode": "BALL",
+     "name": "Ball Corporation"
+    },
+    {
+     "symbol": "106.RVTY",
+     "code": "RVTY",
+     "quoteCode": "RVTY",
+     "name": "Revvity, Inc."
+    },
+    {
+     "symbol": "106.CRL",
+     "code": "CRL",
+     "quoteCode": "CRL",
+     "name": "Charles River Laboratories International, Inc."
+    },
+    {
+     "symbol": "106.IEX",
+     "code": "IEX",
+     "quoteCode": "IEX",
+     "name": "IDEX Corporation"
+    },
+    {
+     "symbol": "105.HST",
+     "code": "HST",
+     "quoteCode": "HST",
+     "name": "Host Hotels & Resorts, Inc."
+    },
+    {
+     "symbol": "105.ZBRA",
+     "code": "ZBRA",
+     "quoteCode": "ZBRA",
+     "name": "Zebra Technologies Corporation"
+    },
+    {
+     "symbol": "105.NDSN",
+     "code": "NDSN",
+     "quoteCode": "NDSN",
+     "name": "Nordson Corporation"
+    },
+    {
+     "symbol": "106.ESS",
+     "code": "ESS",
+     "quoteCode": "ESS",
+     "name": "Essex Property Trust, Inc."
+    },
+    {
+     "symbol": "105.HAS",
+     "code": "HAS",
+     "quoteCode": "HAS",
+     "name": "Hasbro, Inc."
+    },
+    {
+     "symbol": "106.LEN",
+     "code": "LEN",
+     "quoteCode": "LEN",
+     "name": "Lennar Corporation"
+    },
+    {
+     "symbol": "106.WRB",
+     "code": "WRB",
+     "quoteCode": "WRB",
+     "name": "W. R. Berkley Corporation"
+    },
+    {
+     "symbol": "106.GPC",
+     "code": "GPC",
+     "quoteCode": "GPC",
+     "name": "Genuine Parts Company"
+    },
+    {
+     "symbol": "106.KIM",
+     "code": "KIM",
+     "quoteCode": "KIM",
+     "name": "Kimco Realty Corporation"
+    },
+    {
+     "symbol": "105.JBHT",
+     "code": "JBHT",
+     "quoteCode": "JBHT",
+     "name": "J.B. Hunt Transport Services, Inc."
+    },
+    {
+     "symbol": "106.TSN",
+     "code": "TSN",
+     "quoteCode": "TSN",
+     "name": "Tyson Foods, Inc."
+    },
+    {
+     "symbol": "106.ALLE",
+     "code": "ALLE",
+     "quoteCode": "ALLE",
+     "name": "Allegion plc"
+    },
+    {
+     "symbol": "106.MAS",
+     "code": "MAS",
+     "quoteCode": "MAS",
+     "name": "Masco Corporation"
+    },
+    {
+     "symbol": "105.GEN",
+     "code": "GEN",
+     "quoteCode": "GEN",
+     "name": "Gen Digital Inc."
+    },
+    {
+     "symbol": "106.SWK",
+     "code": "SWK",
+     "quoteCode": "SWK",
+     "name": "Stanley Black & Decker, Inc."
+    },
+    {
+     "symbol": "106.FICO",
+     "code": "FICO",
+     "quoteCode": "FICO",
+     "name": "Fair Isaac Corporation"
+    },
+    {
+     "symbol": "106.BG",
+     "code": "BG",
+     "quoteCode": "BG",
+     "name": "Bunge Global SA"
+    },
+    {
+     "symbol": "106.NVR",
+     "code": "NVR",
+     "quoteCode": "NVR",
+     "name": "NVR, Inc."
+    },
+    {
+     "symbol": "105.TRMB",
+     "code": "TRMB",
+     "quoteCode": "TRMB",
+     "name": "Trimble Inc."
+    },
+    {
+     "symbol": "106.FDXF",
+     "code": "FDXF",
+     "quoteCode": "FDXF",
+     "name": "FedEx Freight Holding Company, Inc."
+    },
+    {
+     "symbol": "106.TYL",
+     "code": "TYL",
+     "quoteCode": "TYL",
+     "name": "Tyler Technologies, Inc."
+    },
+    {
+     "symbol": "106.TXT",
+     "code": "TXT",
+     "quoteCode": "TXT",
+     "name": "Textron Inc."
+    },
+    {
+     "symbol": "106.GDDY",
+     "code": "GDDY",
+     "quoteCode": "GDDY",
+     "name": "GoDaddy Inc."
+    },
+    {
+     "symbol": "106.RL",
+     "code": "RL",
+     "quoteCode": "RL",
+     "name": "Ralph Lauren Corporation"
+    },
+    {
+     "symbol": "105.CHRW",
+     "code": "CHRW",
+     "quoteCode": "CHRW",
+     "name": "C.H. Robinson Worldwide, Inc."
+    },
+    {
+     "symbol": "106.EG",
+     "code": "EG",
+     "quoteCode": "EG",
+     "name": "Everest Group, Ltd."
+    },
+    {
+     "symbol": "106.WY",
+     "code": "WY",
+     "quoteCode": "WY",
+     "name": "Weyerhaeuser Company"
+    },
+    {
+     "symbol": "106.AIZ",
+     "code": "AIZ",
+     "quoteCode": "AIZ",
+     "name": "Assurant, Inc."
+    },
+    {
+     "symbol": "106.INVH",
+     "code": "INVH",
+     "quoteCode": "INVH",
+     "name": "Invitation Homes Inc."
+    },
+    {
+     "symbol": "106.IT",
+     "code": "IT",
+     "quoteCode": "IT",
+     "name": "Gartner, Inc."
+    },
+    {
+     "symbol": "106.AVY",
+     "code": "AVY",
+     "quoteCode": "AVY",
+     "name": "Avery Dennison Corporation"
+    },
+    {
+     "symbol": "106.SJM",
+     "code": "SJM",
+     "quoteCode": "SJM",
+     "name": "The J. M. Smucker Company"
+    },
+    {
+     "symbol": "106.MAA",
+     "code": "MAA",
+     "quoteCode": "MAA",
+     "name": "Mid-America Apartment Communities, Inc."
+    },
+    {
+     "symbol": "105.AKAM",
+     "code": "AKAM",
+     "quoteCode": "AKAM",
+     "name": "Akamai Technologies, Inc."
+    },
+    {
+     "symbol": "105.ECHO",
+     "code": "ECHO",
+     "quoteCode": "ECHO",
+     "name": "EchoStar Corporation"
+    },
+    {
+     "symbol": "106.RDDT",
+     "code": "RDDT",
+     "quoteCode": "RDDT",
+     "name": "Reddit, Inc."
+    },
+    {
+     "symbol": "106.DOC",
+     "code": "DOC",
+     "quoteCode": "DOC",
+     "name": "Healthpeak Properties, Inc."
+    },
+    {
+     "symbol": "106.PNW",
+     "code": "PNW",
+     "quoteCode": "PNW",
+     "name": "Pinnacle West Capital Corporation"
+    },
+    {
+     "symbol": "105.FOXA",
+     "code": "FOXA",
+     "quoteCode": "FOXA",
+     "name": "Fox Corporation"
+    },
+    {
+     "symbol": "105.CHTR",
+     "code": "CHTR",
+     "quoteCode": "CHTR",
+     "name": "Charter Communications, Inc."
+    },
+    {
+     "symbol": "106.HII",
+     "code": "HII",
+     "quoteCode": "HII",
+     "name": "Huntington Ingalls Industries, Inc."
+    },
+    {
+     "symbol": "106.GL",
+     "code": "GL",
+     "quoteCode": "GL",
+     "name": "Globe Life Inc."
+    },
+    {
+     "symbol": "105.CSGP",
+     "code": "CSGP",
+     "quoteCode": "CSGP",
+     "name": "CoStar Group, Inc."
+    },
+    {
+     "symbol": "106.IVZ",
+     "code": "IVZ",
+     "quoteCode": "IVZ",
+     "name": "Invesco Ltd."
+    },
+    {
+     "symbol": "105.REG",
+     "code": "REG",
+     "quoteCode": "REG",
+     "name": "Regency Centers Corporation"
+    },
+    {
+     "symbol": "106.MKC",
+     "code": "MKC",
+     "quoteCode": "MKC",
+     "name": "McCormick & Company, Incorporated"
+    },
+    {
+     "symbol": "106.BAX",
+     "code": "BAX",
+     "quoteCode": "BAX",
+     "name": "Baxter International Inc."
+    },
+    {
+     "symbol": "106.FDS",
+     "code": "FDS",
+     "quoteCode": "FDS",
+     "name": "FactSet Research Systems Inc."
+    },
+    {
+     "symbol": "106.SOLV",
+     "code": "SOLV",
+     "quoteCode": "SOLV",
+     "name": "Solventum Corporation"
+    },
+    {
+     "symbol": "105.COO",
+     "code": "COO",
+     "quoteCode": "COO",
+     "name": "The Cooper Companies, Inc."
+    },
+    {
+     "symbol": "106.GNRC",
+     "code": "GNRC",
+     "quoteCode": "GNRC",
+     "name": "Generac Holdings Inc."
+    },
+    {
+     "symbol": "105.JKHY",
+     "code": "JKHY",
+     "quoteCode": "JKHY",
+     "name": "Jack Henry & Associates, Inc."
+    },
+    {
+     "symbol": "105.TECH",
+     "code": "TECH",
+     "quoteCode": "TECH",
+     "name": "Bio-Techne Corporation"
+    },
+    {
+     "symbol": "105.LULU",
+     "code": "LULU",
+     "quoteCode": "LULU",
+     "name": "lululemon athletica inc."
+    },
+    {
+     "symbol": "106.DECK",
+     "code": "DECK",
+     "quoteCode": "DECK",
+     "name": "Deckers Outdoor Corporation"
+    },
+    {
+     "symbol": "106.LII",
+     "code": "LII",
+     "quoteCode": "LII",
+     "name": "Lennox International Inc."
+    },
+    {
+     "symbol": "106.ALB",
+     "code": "ALB",
+     "quoteCode": "ALB",
+     "name": "Albemarle Corporation"
+    },
+    {
+     "symbol": "106.CLX",
+     "code": "CLX",
+     "quoteCode": "CLX",
+     "name": "The Clorox Company"
+    },
+    {
+     "symbol": "106.PNR",
+     "code": "PNR",
+     "quoteCode": "PNR",
+     "name": "Pentair plc"
+    },
+    {
+     "symbol": "106.TKO",
+     "code": "TKO",
+     "quoteCode": "TKO",
+     "name": "TKO Group Holdings, Inc."
+    },
+    {
+     "symbol": "105.NWSA",
+     "code": "NWSA",
+     "quoteCode": "NWSA",
+     "name": "News Corporation"
+    },
+    {
+     "symbol": "106.AES",
+     "code": "AES",
+     "quoteCode": "AES",
+     "name": "The AES Corporation"
+    },
+    {
+     "symbol": "106.UDR",
+     "code": "UDR",
+     "quoteCode": "UDR",
+     "name": "UDR, Inc."
+    },
+    {
+     "symbol": "105.DPZ",
+     "code": "DPZ",
+     "quoteCode": "DPZ",
+     "name": "Domino's Pizza, Inc."
+    },
+    {
+     "symbol": "105.PODD",
+     "code": "PODD",
+     "quoteCode": "PODD",
+     "name": "Insulet Corporation"
+    },
+    {
+     "symbol": "106.ROL",
+     "code": "ROL",
+     "quoteCode": "ROL",
+     "name": "Rollins, Inc."
+    },
+    {
+     "symbol": "106.CPT",
+     "code": "CPT",
+     "quoteCode": "CPT",
+     "name": "Camden Property Trust"
+    },
+    {
+     "symbol": "106.BXP",
+     "code": "BXP",
+     "quoteCode": "BXP",
+     "name": "BXP, Inc."
+    },
+    {
+     "symbol": "105.ALGN",
+     "code": "ALGN",
+     "quoteCode": "ALGN",
+     "name": "Align Technology, Inc."
+    },
+    {
+     "symbol": "106.LVS",
+     "code": "LVS",
+     "quoteCode": "LVS",
+     "name": "Las Vegas Sands Corp."
+    },
+    {
+     "symbol": "106.APTV",
+     "code": "APTV",
+     "quoteCode": "APTV",
+     "name": "Aptiv PLC"
+    },
+    {
+     "symbol": "106.BEN",
+     "code": "BEN",
+     "quoteCode": "BEN",
+     "name": "Franklin Templeton Inc."
+    },
+    {
+     "symbol": "106.UHS",
+     "code": "UHS",
+     "quoteCode": "UHS",
+     "name": "Universal Health Services, Inc."
+    },
+    {
+     "symbol": "106.FRT",
+     "code": "FRT",
+     "quoteCode": "FRT",
+     "name": "Federal Realty Investment Trust"
+    },
+    {
+     "symbol": "105.HSIC",
+     "code": "HSIC",
+     "quoteCode": "HSIC",
+     "name": "Henry Schein, Inc."
+    },
+    {
+     "symbol": "106.NCLH",
+     "code": "NCLH",
+     "quoteCode": "NCLH",
+     "name": "Norwegian Cruise Line Holdings Ltd."
+    },
+    {
+     "symbol": "105.FOX",
+     "code": "FOX",
+     "quoteCode": "FOX",
+     "name": "Fox Corporation"
+    },
+    {
+     "symbol": "106.AOS",
+     "code": "AOS",
+     "quoteCode": "AOS",
+     "name": "A. O. Smith Corporation"
+    },
+    {
+     "symbol": "105.ERIE",
+     "code": "ERIE",
+     "quoteCode": "ERIE",
+     "name": "Erie Indemnity Company"
+    },
+    {
+     "symbol": "106.DVA",
+     "code": "DVA",
+     "quoteCode": "DVA",
+     "name": "DaVita Inc."
+    },
+    {
+     "symbol": "106.ARE",
+     "code": "ARE",
+     "quoteCode": "ARE",
+     "name": "Alexandria Real Estate Equities, Inc."
+    },
+    {
+     "symbol": "106.HRL",
+     "code": "HRL",
+     "quoteCode": "HRL",
+     "name": "Hormel Foods Corporation"
+    },
+    {
+     "symbol": "106.MOS",
+     "code": "MOS",
+     "quoteCode": "MOS",
+     "name": "The Mosaic Company"
+    },
+    {
+     "symbol": "105.WYNN",
+     "code": "WYNN",
+     "quoteCode": "WYNN",
+     "name": "Wynn Resorts, Limited"
+    },
+    {
+     "symbol": "106.MGM",
+     "code": "MGM",
+     "quoteCode": "MGM",
+     "name": "MGM Resorts International"
+    },
+    {
+     "symbol": "106.BF_B",
+     "code": "BF.B",
+     "quoteCode": "BF_B",
+     "name": "Brown-Forman Corporation"
+    },
+    {
+     "symbol": "106.SKYD",
+     "code": "SKYD",
+     "quoteCode": "SKYD",
+     "name": "Skydance Corporation"
+    },
+    {
+     "symbol": "105.NWS",
+     "code": "NWS",
+     "quoteCode": "NWS",
+     "name": "News Corporation"
+    }
+   ]
+  },
+  "nasdaq100": {
+   "label": "Nasdaq 100",
+   "name": "纳斯达克 100",
+   "currency": "USD",
+   "indexName": "Nasdaq-100",
+   "members": [
+    {
+     "symbol": "105.AAPL",
+     "code": "AAPL",
+     "quoteCode": "AAPL",
+     "name": "Apple Inc."
+    },
+    {
+     "symbol": "105.NVDA",
+     "code": "NVDA",
+     "quoteCode": "NVDA",
+     "name": "NVIDIA Corporation"
+    },
+    {
+     "symbol": "105.MSFT",
+     "code": "MSFT",
+     "quoteCode": "MSFT",
+     "name": "Microsoft Corporation"
+    },
+    {
+     "symbol": "105.MU",
+     "code": "MU",
+     "quoteCode": "MU",
+     "name": "Micron Technology, Inc."
+    },
+    {
+     "symbol": "105.AMZN",
+     "code": "AMZN",
+     "quoteCode": "AMZN",
+     "name": "Amazon.com, Inc."
+    },
+    {
+     "symbol": "105.AMD",
+     "code": "AMD",
+     "quoteCode": "AMD",
+     "name": "Advanced Micro Devices, Inc."
+    },
+    {
+     "symbol": "105.TSLA",
+     "code": "TSLA",
+     "quoteCode": "TSLA",
+     "name": "Tesla, Inc."
+    },
+    {
+     "symbol": "105.META",
+     "code": "META",
+     "quoteCode": "META",
+     "name": "Meta Platforms, Inc."
+    },
+    {
+     "symbol": "105.WMT",
+     "code": "WMT",
+     "quoteCode": "WMT",
+     "name": "Walmart Inc."
+    },
+    {
+     "symbol": "105.GOOGL",
+     "code": "GOOGL",
+     "quoteCode": "GOOGL",
+     "name": "Alphabet Inc."
+    },
+    {
+     "symbol": "105.SPCX",
+     "code": "SPCX",
+     "quoteCode": "SPCX",
+     "name": "Space Exploration Technologies Corp."
+    },
+    {
+     "symbol": "105.AVGO",
+     "code": "AVGO",
+     "quoteCode": "AVGO",
+     "name": "Broadcom Inc."
+    },
+    {
+     "symbol": "105.GOOG",
+     "code": "GOOG",
+     "quoteCode": "GOOG",
+     "name": "Alphabet Inc."
+    },
+    {
+     "symbol": "105.COST",
+     "code": "COST",
+     "quoteCode": "COST",
+     "name": "Costco Wholesale Corporation"
+    },
+    {
+     "symbol": "105.PLTR",
+     "code": "PLTR",
+     "quoteCode": "PLTR",
+     "name": "Palantir Technologies Inc."
+    },
+    {
+     "symbol": "105.CSCO",
+     "code": "CSCO",
+     "quoteCode": "CSCO",
+     "name": "Cisco Systems, Inc."
+    },
+    {
+     "symbol": "105.INTC",
+     "code": "INTC",
+     "quoteCode": "INTC",
+     "name": "Intel Corporation"
+    },
+    {
+     "symbol": "105.AMAT",
+     "code": "AMAT",
+     "quoteCode": "AMAT",
+     "name": "Applied Materials, Inc."
+    },
+    {
+     "symbol": "105.LRCX",
+     "code": "LRCX",
+     "quoteCode": "LRCX",
+     "name": "Lam Research Corporation"
+    },
+    {
+     "symbol": "105.PANW",
+     "code": "PANW",
+     "quoteCode": "PANW",
+     "name": "Palo Alto Networks, Inc."
+    },
+    {
+     "symbol": "105.TXN",
+     "code": "TXN",
+     "quoteCode": "TXN",
+     "name": "Texas Instruments Incorporated"
+    },
+    {
+     "symbol": "105.NFLX",
+     "code": "NFLX",
+     "quoteCode": "NFLX",
+     "name": "Netflix, Inc."
+    },
+    {
+     "symbol": "105.CRWD",
+     "code": "CRWD",
+     "quoteCode": "CRWD",
+     "name": "CrowdStrike Holdings, Inc."
+    },
+    {
+     "symbol": "105.AMGN",
+     "code": "AMGN",
+     "quoteCode": "AMGN",
+     "name": "Amgen Inc."
+    },
+    {
+     "symbol": "105.LIN",
+     "code": "LIN",
+     "quoteCode": "LIN",
+     "name": "Linde plc"
+    },
+    {
+     "symbol": "105.GILD",
+     "code": "GILD",
+     "quoteCode": "GILD",
+     "name": "Gilead Sciences, Inc."
+    },
+    {
+     "symbol": "105.KLAC",
+     "code": "KLAC",
+     "quoteCode": "KLAC",
+     "name": "KLA Corporation"
+    },
+    {
+     "symbol": "105.ADI",
+     "code": "ADI",
+     "quoteCode": "ADI",
+     "name": "Analog Devices, Inc."
+    },
+    {
+     "symbol": "105.SHOP",
+     "code": "SHOP",
+     "quoteCode": "SHOP",
+     "name": "Shopify Inc."
+    },
+    {
+     "symbol": "105.PEP",
+     "code": "PEP",
+     "quoteCode": "PEP",
+     "name": "PepsiCo, Inc."
+    },
+    {
+     "symbol": "105.QCOM",
+     "code": "QCOM",
+     "quoteCode": "QCOM",
+     "name": "QUALCOMM Incorporated"
+    },
+    {
+     "symbol": "105.MRVL",
+     "code": "MRVL",
+     "quoteCode": "MRVL",
+     "name": "Marvell Technology, Inc."
+    },
+    {
+     "symbol": "105.SNDK",
+     "code": "SNDK",
+     "quoteCode": "SNDK",
+     "name": "Sandisk Corporation"
+    },
+    {
+     "symbol": "105.TMUS",
+     "code": "TMUS",
+     "quoteCode": "TMUS",
+     "name": "T-Mobile US, Inc."
+    },
+    {
+     "symbol": "105.ISRG",
+     "code": "ISRG",
+     "quoteCode": "ISRG",
+     "name": "Intuitive Surgical, Inc."
+    },
+    {
+     "symbol": "105.ASML",
+     "code": "ASML",
+     "quoteCode": "ASML",
+     "name": "ASML Holding N.V."
+    },
+    {
+     "symbol": "105.STX",
+     "code": "STX",
+     "quoteCode": "STX",
+     "name": "Seagate Technology Holdings plc"
+    },
+    {
+     "symbol": "105.VRTX",
+     "code": "VRTX",
+     "quoteCode": "VRTX",
+     "name": "Vertex Pharmaceuticals Incorporated"
+    },
+    {
+     "symbol": "105.WDC",
+     "code": "WDC",
+     "quoteCode": "WDC",
+     "name": "Western Digital Corporation"
+    },
+    {
+     "symbol": "105.SBUX",
+     "code": "SBUX",
+     "quoteCode": "SBUX",
+     "name": "Starbucks Corporation"
+    },
+    {
+     "symbol": "105.ADP",
+     "code": "ADP",
+     "quoteCode": "ADP",
+     "name": "Automatic Data Processing, Inc."
+    },
+    {
+     "symbol": "105.BKNG",
+     "code": "BKNG",
+     "quoteCode": "BKNG",
+     "name": "Booking Holdings Inc."
+    },
+    {
+     "symbol": "105.MAR",
+     "code": "MAR",
+     "quoteCode": "MAR",
+     "name": "Marriott International, Inc."
+    },
+    {
+     "symbol": "105.FTNT",
+     "code": "FTNT",
+     "quoteCode": "FTNT",
+     "name": "Fortinet, Inc."
+    },
+    {
+     "symbol": "105.ADBE",
+     "code": "ADBE",
+     "quoteCode": "ADBE",
+     "name": "Adobe Inc."
+    },
+    {
+     "symbol": "105.CSX",
+     "code": "CSX",
+     "quoteCode": "CSX",
+     "name": "CSX Corporation"
+    },
+    {
+     "symbol": "105.REGN",
+     "code": "REGN",
+     "quoteCode": "REGN",
+     "name": "Regeneron Pharmaceuticals, Inc."
+    },
+    {
+     "symbol": "105.INTU",
+     "code": "INTU",
+     "quoteCode": "INTU",
+     "name": "Intuit Inc."
+    },
+    {
+     "symbol": "105.CEG",
+     "code": "CEG",
+     "quoteCode": "CEG",
+     "name": "Constellation Energy Corporation"
+    },
+    {
+     "symbol": "105.MNST",
+     "code": "MNST",
+     "quoteCode": "MNST",
+     "name": "Monster Beverage Corporation"
+    },
+    {
+     "symbol": "105.CDNS",
+     "code": "CDNS",
+     "quoteCode": "CDNS",
+     "name": "Cadence Design Systems, Inc."
+    },
+    {
+     "symbol": "105.ARM",
+     "code": "ARM",
+     "quoteCode": "ARM",
+     "name": "Arm Holdings plc"
+    },
+    {
+     "symbol": "105.SNPS",
+     "code": "SNPS",
+     "quoteCode": "SNPS",
+     "name": "Synopsys, Inc."
+    },
+    {
+     "symbol": "105.MRNA",
+     "code": "MRNA",
+     "quoteCode": "MRNA",
+     "name": "Moderna, Inc."
+    },
+    {
+     "symbol": "105.CTAS",
+     "code": "CTAS",
+     "quoteCode": "CTAS",
+     "name": "Cintas Corporation"
+    },
+    {
+     "symbol": "105.MDLZ",
+     "code": "MDLZ",
+     "quoteCode": "MDLZ",
+     "name": "Mondelez International, Inc."
+    },
+    {
+     "symbol": "105.MELI",
+     "code": "MELI",
+     "quoteCode": "MELI",
+     "name": "MercadoLibre, Inc."
+    },
+    {
+     "symbol": "105.CMCSA",
+     "code": "CMCSA",
+     "quoteCode": "CMCSA",
+     "name": "Comcast Corporation"
+    },
+    {
+     "symbol": "105.DDOG",
+     "code": "DDOG",
+     "quoteCode": "DDOG",
+     "name": "Datadog, Inc."
+    },
+    {
+     "symbol": "105.LITE",
+     "code": "LITE",
+     "quoteCode": "LITE",
+     "name": "Lumentum Holdings Inc."
+    },
+    {
+     "symbol": "105.ROST",
+     "code": "ROST",
+     "quoteCode": "ROST",
+     "name": "Ross Stores, Inc."
+    },
+    {
+     "symbol": "105.DASH",
+     "code": "DASH",
+     "quoteCode": "DASH",
+     "name": "DoorDash, Inc."
+    },
+    {
+     "symbol": "105.ORLY",
+     "code": "ORLY",
+     "quoteCode": "ORLY",
+     "name": "O'Reilly Automotive, Inc."
+    },
+    {
+     "symbol": "105.AEP",
+     "code": "AEP",
+     "quoteCode": "AEP",
+     "name": "American Electric Power Company, Inc."
+    },
+    {
+     "symbol": "105.APP",
+     "code": "APP",
+     "quoteCode": "APP",
+     "name": "AppLovin Corporation"
+    },
+    {
+     "symbol": "105.HON",
+     "code": "HON",
+     "quoteCode": "HON",
+     "name": "Honeywell International Inc."
+    },
+    {
+     "symbol": "105.ABNB",
+     "code": "ABNB",
+     "quoteCode": "ABNB",
+     "name": "Airbnb, Inc."
+    },
+    {
+     "symbol": "105.NXPI",
+     "code": "NXPI",
+     "quoteCode": "NXPI",
+     "name": "NXP Semiconductors N.V."
+    },
+    {
+     "symbol": "105.FAST",
+     "code": "FAST",
+     "quoteCode": "FAST",
+     "name": "Fastenal Company"
+    },
+    {
+     "symbol": "105.MPWR",
+     "code": "MPWR",
+     "quoteCode": "MPWR",
+     "name": "Monolithic Power Systems, Inc."
+    },
+    {
+     "symbol": "105.FANG",
+     "code": "FANG",
+     "quoteCode": "FANG",
+     "name": "Diamondback Energy, Inc."
+    },
+    {
+     "symbol": "105.BKR",
+     "code": "BKR",
+     "quoteCode": "BKR",
+     "name": "Baker Hughes Company"
+    },
+    {
+     "symbol": "105.PCAR",
+     "code": "PCAR",
+     "quoteCode": "PCAR",
+     "name": "PACCAR Inc"
+    },
+    {
+     "symbol": "105.PDD",
+     "code": "PDD",
+     "quoteCode": "PDD",
+     "name": "PDD Holdings Inc."
+    },
+    {
+     "symbol": "105.ADSK",
+     "code": "ADSK",
+     "quoteCode": "ADSK",
+     "name": "Autodesk, Inc."
+    },
+    {
+     "symbol": "105.XEL",
+     "code": "XEL",
+     "quoteCode": "XEL",
+     "name": "Xcel Energy Inc."
+    },
+    {
+     "symbol": "105.CCEP",
+     "code": "CCEP",
+     "quoteCode": "CCEP",
+     "name": "Coca-Cola Europacific Partners PLC"
+    },
+    {
+     "symbol": "105.HONA",
+     "code": "HONA",
+     "quoteCode": "HONA",
+     "name": "Honeywell Aerospace Inc."
+    },
+    {
+     "symbol": "105.KDP",
+     "code": "KDP",
+     "quoteCode": "KDP",
+     "name": "Keurig Dr Pepper Inc."
+    },
+    {
+     "symbol": "105.PYPL",
+     "code": "PYPL",
+     "quoteCode": "PYPL",
+     "name": "PayPal Holdings, Inc."
+    },
+    {
+     "symbol": "105.EXC",
+     "code": "EXC",
+     "quoteCode": "EXC",
+     "name": "Exelon Corporation"
+    },
+    {
+     "symbol": "105.MSTR",
+     "code": "MSTR",
+     "quoteCode": "MSTR",
+     "name": "Strategy Inc"
+    },
+    {
+     "symbol": "105.ROP",
+     "code": "ROP",
+     "quoteCode": "ROP",
+     "name": "Roper Technologies, Inc."
+    },
+    {
+     "symbol": "105.ALAB",
+     "code": "ALAB",
+     "quoteCode": "ALAB",
+     "name": "Astera Labs, Inc."
+    },
+    {
+     "symbol": "105.TRI",
+     "code": "TRI",
+     "quoteCode": "TRI",
+     "name": "Thomson Reuters Corporation"
+    },
+    {
+     "symbol": "105.IDXX",
+     "code": "IDXX",
+     "quoteCode": "IDXX",
+     "name": "IDEXX Laboratories, Inc."
+    },
+    {
+     "symbol": "105.TER",
+     "code": "TER",
+     "quoteCode": "TER",
+     "name": "Teradyne, Inc."
+    },
+    {
+     "symbol": "105.MCHP",
+     "code": "MCHP",
+     "quoteCode": "MCHP",
+     "name": "Microchip Technology Incorporated"
+    },
+    {
+     "symbol": "105.FER",
+     "code": "FER",
+     "quoteCode": "FER",
+     "name": "Ferrovial N.V."
+    },
+    {
+     "symbol": "105.PAYX",
+     "code": "PAYX",
+     "quoteCode": "PAYX",
+     "name": "Paychex, Inc."
+    },
+    {
+     "symbol": "105.WDAY",
+     "code": "WDAY",
+     "quoteCode": "WDAY",
+     "name": "Workday, Inc."
+    },
+    {
+     "symbol": "105.NBIS",
+     "code": "NBIS",
+     "quoteCode": "NBIS",
+     "name": "Nebius Group N.V."
+    },
+    {
+     "symbol": "105.ODFL",
+     "code": "ODFL",
+     "quoteCode": "ODFL",
+     "name": "Old Dominion Freight Line, Inc."
+    },
+    {
+     "symbol": "105.TTWO",
+     "code": "TTWO",
+     "quoteCode": "TTWO",
+     "name": "Take-Two Interactive Software, Inc."
+    },
+    {
+     "symbol": "105.AXON",
+     "code": "AXON",
+     "quoteCode": "AXON",
+     "name": "Axon Enterprise, Inc."
+    },
+    {
+     "symbol": "105.GEHC",
+     "code": "GEHC",
+     "quoteCode": "GEHC",
+     "name": "GE HealthCare Technologies Inc."
+    },
+    {
+     "symbol": "105.RKLB",
+     "code": "RKLB",
+     "quoteCode": "RKLB",
+     "name": "Rocket Lab Corporation"
+    },
+    {
+     "symbol": "105.DXCM",
+     "code": "DXCM",
+     "quoteCode": "DXCM",
+     "name": "DexCom, Inc."
+    },
+    {
+     "symbol": "105.CPRT",
+     "code": "CPRT",
+     "quoteCode": "CPRT",
+     "name": "Copart, Inc."
+    },
+    {
+     "symbol": "105.CRWV",
+     "code": "CRWV",
+     "quoteCode": "CRWV",
+     "name": "CoreWeave, Inc."
+    },
+    {
+     "symbol": "105.ALNY",
+     "code": "ALNY",
+     "quoteCode": "ALNY",
+     "name": "Alnylam Pharmaceuticals, Inc."
+    }
+   ]
+  },
+  "us30": {
+   "label": "US30",
+   "name": "道琼斯 30",
+   "currency": "USD",
+   "indexName": "Dow Jones Industrial Average",
+   "members": [
+    {
+     "symbol": "105.AAPL",
+     "code": "AAPL",
+     "quoteCode": "AAPL",
+     "name": "Apple Inc."
+    },
+    {
+     "symbol": "105.NVDA",
+     "code": "NVDA",
+     "quoteCode": "NVDA",
+     "name": "NVIDIA Corporation"
+    },
+    {
+     "symbol": "105.MSFT",
+     "code": "MSFT",
+     "quoteCode": "MSFT",
+     "name": "Microsoft Corporation"
+    },
+    {
+     "symbol": "105.AMZN",
+     "code": "AMZN",
+     "quoteCode": "AMZN",
+     "name": "Amazon.com, Inc."
+    },
+    {
+     "symbol": "105.GOOGL",
+     "code": "GOOGL",
+     "quoteCode": "GOOGL",
+     "name": "Alphabet Inc."
+    },
+    {
+     "symbol": "106.JPM",
+     "code": "JPM",
+     "quoteCode": "JPM",
+     "name": "JPMorgan Chase & Co."
+    },
+    {
+     "symbol": "106.V",
+     "code": "V",
+     "quoteCode": "V",
+     "name": "Visa Inc."
+    },
+    {
+     "symbol": "106.JNJ",
+     "code": "JNJ",
+     "quoteCode": "JNJ",
+     "name": "Johnson & Johnson"
+    },
+    {
+     "symbol": "105.WMT",
+     "code": "WMT",
+     "quoteCode": "WMT",
+     "name": "Walmart Inc."
+    },
+    {
+     "symbol": "106.CVX",
+     "code": "CVX",
+     "quoteCode": "CVX",
+     "name": "Chevron Corporation"
+    },
+    {
+     "symbol": "105.CSCO",
+     "code": "CSCO",
+     "quoteCode": "CSCO",
+     "name": "Cisco Systems, Inc."
+    },
+    {
+     "symbol": "106.PG",
+     "code": "PG",
+     "quoteCode": "PG",
+     "name": "The Procter & Gamble Company"
+    },
+    {
+     "symbol": "106.MRK",
+     "code": "MRK",
+     "quoteCode": "MRK",
+     "name": "Merck & Co., Inc."
+    },
+    {
+     "symbol": "106.UNH",
+     "code": "UNH",
+     "quoteCode": "UNH",
+     "name": "UnitedHealth Group Incorporated"
+    },
+    {
+     "symbol": "106.KO",
+     "code": "KO",
+     "quoteCode": "KO",
+     "name": "The Coca-Cola Company"
+    },
+    {
+     "symbol": "106.HD",
+     "code": "HD",
+     "quoteCode": "HD",
+     "name": "The Home Depot, Inc."
+    },
+    {
+     "symbol": "106.CAT",
+     "code": "CAT",
+     "quoteCode": "CAT",
+     "name": "Caterpillar Inc."
+    },
+    {
+     "symbol": "106.GS",
+     "code": "GS",
+     "quoteCode": "GS",
+     "name": "The Goldman Sachs Group, Inc."
+    },
+    {
+     "symbol": "105.AMGN",
+     "code": "AMGN",
+     "quoteCode": "AMGN",
+     "name": "Amgen Inc."
+    },
+    {
+     "symbol": "106.IBM",
+     "code": "IBM",
+     "quoteCode": "IBM",
+     "name": "International Business Machines Corporation"
+    },
+    {
+     "symbol": "106.DIS",
+     "code": "DIS",
+     "quoteCode": "DIS",
+     "name": "The Walt Disney Company"
+    },
+    {
+     "symbol": "106.CRM",
+     "code": "CRM",
+     "quoteCode": "CRM",
+     "name": "Salesforce, Inc."
+    },
+    {
+     "symbol": "106.MCD",
+     "code": "MCD",
+     "quoteCode": "MCD",
+     "name": "McDonald's Corporation"
+    },
+    {
+     "symbol": "106.AXP",
+     "code": "AXP",
+     "quoteCode": "AXP",
+     "name": "American Express Company"
+    },
+    {
+     "symbol": "106.BA",
+     "code": "BA",
+     "quoteCode": "BA",
+     "name": "The Boeing Company"
+    },
+    {
+     "symbol": "106.MMM",
+     "code": "MMM",
+     "quoteCode": "MMM",
+     "name": "3M Company"
+    },
+    {
+     "symbol": "106.TRV",
+     "code": "TRV",
+     "quoteCode": "TRV",
+     "name": "The Travelers Companies, Inc."
+    },
+    {
+     "symbol": "106.SHW",
+     "code": "SHW",
+     "quoteCode": "SHW",
+     "name": "The Sherwin-Williams Company"
+    },
+    {
+     "symbol": "105.HON",
+     "code": "HON",
+     "quoteCode": "HON",
+     "name": "Honeywell International Inc."
+    },
+    {
+     "symbol": "106.NKE",
+     "code": "NKE",
+     "quoteCode": "NKE",
+     "name": "NIKE, Inc."
+    }
+   ]
+  }
+ }
+}

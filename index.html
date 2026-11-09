@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0f10" id="themeColor">
+  <meta name="description" content="跨沪深港美市场的股票行情观察台：搜索股票、查看今日分时走势、回溯近一年每日涨跌，并在详情页直接查看最新市场讯息与下次财报日程；还可以通过股票热力图观察 Shanghai、US 500、Nasdaq 100、US30 与 HK 市场；同时跟踪黄金、白银、原油和美元兑人民币汇率，黄金白银同时折算人民币/克，并可查看其今日走势、涨跌日历与 AI 预测。">
+  <title>股票罗盘 · 沪深港美行情、金银油汇、涨跌日历与股票热力图</title>
+  <script>
+    (() => {
+      const key = "stockatlas:theme:v1";
+      let theme = null;
+      try { theme = localStorage.getItem(key); } catch (_) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+      }
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      const meta = document.getElementById("themeColor");
+      if (meta) meta.content = theme === "light" ? "#f3efe5" : "#0b0f10";
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3.3 2.7 5.48 6.05.88-4.38 4.27 1.03 6.03L12 17.12 6.6 19.96l1.03-6.03L3.25 9.66l6.05-.88L12 3.3Z"></path></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5"></path><path d="M4.7 16.8A8 8 0 1 0 5 7.8L20 12"></path></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"></path></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="4" cy="6" r="1"></circle><circle cx="4" cy="12" r="1"></circle><circle cx="4" cy="18" r="1"></circle></symbol>
+    <symbol id="icon-bookmark" viewBox="0 0 24 24"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-4-6 4V4.8Z"></path></symbol>
+    <symbol id="icon-trend" viewBox="0 0 24 24"><path d="M3 17.5 9.2 11l4.1 4.1L21 7.5"></path><path d="M15.5 7.5H21V13"></path></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.4"></rect><rect x="13" y="3" width="8" height="5" rx="1.4"></rect><rect x="13" y="10" width="8" height="11" rx="1.4"></rect><rect x="3" y="13" width="8" height="8" rx="1.4"></rect></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.7"></circle><path d="M12 2v2M12 20v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2 12h2M20 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.6 14.3A8.5 8.5 0 0 1 9.7 3.4 8.5 8.5 0 1 0 20.6 14.3Z"></path></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 8v5"></path><circle cx="12" cy="17" r=".7" fill="currentColor" stroke="none"></circle><path d="M10.2 3.6 2.7 17a2 2 0 0 0 1.8 3h15a2 2 0 0 0 1.8-3L13.8 3.6a2 2 0 0 0-3.6 0Z"></path></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M11 3.4l1.6 4.5 4.5 1.6-4.5 1.6L11 15.6l-1.6-4.5L4.9 9.5l4.5-1.6L11 3.4Z"></path><path d="M18.2 14.6l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9.9-2.4Z"></path></symbol>
+    <symbol id="icon-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"></path></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="搜索与自选股">
+      <header class="brand-bar">
+        <a class="brand" href="#" aria-label="股票罗盘首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36"><path d="M8 26V16M14 26V10M20 26V19M26 26V7" class="mark-line"></path><path d="M6 29h24" class="mark-base"></path></svg>
+          </span>
+          <span class="brand-copy">
+            <strong>股票罗盘</strong>
+            <small>STOCK ATLAS</small>
+          </span>
+        </a>
+        <div class="brand-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换到浅色主题" title="切换到浅色主题">
+            <svg class="icon icon-sun" aria-hidden="true"><use href="#icon-sun"></use></svg>
+            <svg class="icon icon-moon" aria-hidden="true"><use href="#icon-moon"></use></svg>
+          </button>
+          <span class="live-chip"><span class="live-dot"></span>LIVE</span>
+        </div>
+      </header>
+
+      <div class="search-block">
+        <label class="visually-hidden" for="searchInput">按股票名称、代码或拼音搜索</label>
+        <div class="search-field" id="searchField">
+          <svg class="icon search-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+          <input id="searchInput" type="search" placeholder="搜索名称 / 代码，如 茅台、00700、AAPL" autocomplete="off" spellcheck="false" aria-controls="searchPanel" aria-expanded="false">
+          <button class="search-clear" id="searchClear" type="button" aria-label="清空搜索" hidden><svg class="icon"><use href="#icon-x"></use></svg></button>
+          <kbd id="searchKbd">⌘ K</kbd>
+        </div>
+
+        <div class="search-idle" id="searchIdle">
+          <span class="idle-label">快速进入</span>
+          <div class="quick-chips">
+            <button type="button" data-quick-symbol="1.600519" data-quick-name="贵州茅台">贵州茅台</button>
+            <button type="button" data-quick-symbol="116.00700" data-quick-name="腾讯控股">腾讯控股</button>
+            <button type="button" data-quick-symbol="105.AAPL" data-quick-name="苹果">苹果</button>
+            <button type="button" data-quick-symbol="105.NVDA" data-quick-name="英伟达">英伟达</button>
+          </div>
+        </div>
+
+        <section class="search-panel" id="searchPanel" hidden aria-live="polite">
+          <div class="search-panel-head">
+            <div>
+              <span class="panel-eyebrow">CROSS-MARKET SEARCH</span>
+              <span class="search-summary" id="searchSummary">正在搜索…</span>
+            </div>
+            <button class="icon-button small" id="closeSearch" type="button" aria-label="关闭搜索面板"><svg class="icon"><use href="#icon-x"></use></svg></button>
+          </div>
+          <div class="market-filters" id="marketFilters" role="tablist" aria-label="按市场筛选">
+            <button class="active" type="button" data-market-filter="ALL" role="tab" aria-selected="true">全部 <span class="filter-count" data-count="ALL">0</span></button>
+            <button type="button" data-market-filter="CN" role="tab" aria-selected="false">A股 <span class="filter-count" data-count="CN">0</span></button>
+            <button type="button" data-market-filter="HK" role="tab" aria-selected="false">港股 <span class="filter-count" data-count="HK">0</span></button>
+            <button type="button" data-market-filter="US" role="tab" aria-selected="false">美股 <span class="filter-count" data-count="US">0</span></button>
+          </div>
+          <div class="search-results" id="searchResults" role="listbox" aria-label="搜索结果"></div>
+          <p class="search-empty" id="searchEmpty" hidden></p>
+          <p class="search-footnote">支持沪深京 A 股、港股与美股 · 数据来自东方财富</p>
+        </section>
+      </div>
+
+      <section class="favorites-section">
+        <header class="section-heading">
+          <div>
+            <span class="section-kicker">WATCHLIST</span>
+            <h2>我的自选 <span class="count-badge" id="favoriteCount">0</span></h2>
+          </div>
+          <svg class="icon heading-icon" aria-hidden="true"><use href="#icon-bookmark"></use></svg>
+        </header>
+        <div class="favorites-list" id="favoritesList"></div>
+        <p class="favorites-hint" id="favoritesHint">在股票详情页点击星标，即可加入自选。</p>
+      </section>
+
+      <section class="market-pulse" aria-labelledby="marketPulseTitle">
+        <header class="section-heading">
+          <div>
+            <span class="section-kicker">MARKET PULSE</span>
+            <h2 id="marketPulseTitle">市场脉搏</h2>
+          </div>
+          <span class="pulse-caption">三地风向</span>
+        </header>
+        <div class="pulse-list" id="marketPulseList" aria-live="polite"></div>
+      </section>
+
+      <section class="commodities" aria-labelledby="commoditiesTitle">
+        <header class="section-heading">
+          <div>
+            <span class="section-kicker">COMMODITIES</span>
+            <h2 id="commoditiesTitle">大宗商品</h2>
+          </div>
+          <span class="pulse-caption">金 · 银 · 油 · 汇</span>
+        </header>
+        <div class="commodity-list" id="commodityList" aria-live="polite"></div>
+      </section>
+
+      <footer class="sidebar-footer">
+        <div class="source-line"><span class="status-dot" id="sidebarDot"></span><span id="sidebarStatus">行情通道就绪</span></div>
+        <p>数据仅供学习研究，不构成投资建议。</p>
+        <p class="footer-meta">北京时间 · <span id="sidebarClock">--:--</span></p>
+      </footer>
+    </aside>
+
+    <main class="main" id="main">
+      <header class="topbar">
+        <div class="topbar-context">
+          <span class="topbar-kicker">MARKET DESK</span>
+          <span class="topbar-date" id="todayLabel">--</span>
+        </div>
+        <nav class="view-tabs" id="viewTabs" role="tablist" aria-label="主视图">
+          <button type="button" role="tab" data-view-mode="stock" class="active" aria-selected="true" aria-label="个股行情">
+            <svg class="icon"><use href="#icon-trend"></use></svg><span>行情</span>
+          </button>
+          <button type="button" role="tab" data-view-mode="heatmap" aria-selected="false" aria-label="股票热力图">
+            <svg class="icon"><use href="#icon-grid"></use></svg><span>热力图</span>
+          </button>
+        </nav>
+        <div class="topbar-actions">
+          <span class="connection-pill" id="connectionPill"><span class="connection-dot"></span><span id="connectionText">行情已连接</span></span>
+          <span class="update-label" id="updateLabel">等待数据</span>
+          <button class="refresh-button" id="refreshButton" type="button" aria-label="刷新行情" title="刷新行情">
+            <svg class="icon"><use href="#icon-refresh"></use></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="loading-view" id="loadingView" aria-label="正在加载行情">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-price"></div>
+        <div class="skeleton-strip">
+          <div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div>
+        </div>
+        <div class="skeleton skeleton-chart"></div>
+      </section>
+
+      <section class="error-view" id="errorView" hidden>
+        <div class="error-mark"><svg class="icon"><use href="#icon-alert"></use></svg></div>
+        <span class="section-kicker">CONNECTION LOST</span>
+        <h1>行情暂时没有接通</h1>
+        <p id="errorMessage">请检查网络连接后重试。</p>
+        <button class="primary-button" id="errorRetry" type="button"><svg class="icon"><use href="#icon-refresh"></use></svg>重新加载</button>
+      </section>
+
+      <section class="stock-view" id="stockView" hidden>
+        <header class="stock-header">
+          <div class="stock-identity">
+            <div class="tag-row">
+              <span class="market-tag" id="boardTag">沪A</span>
+              <span class="exchange-tag" id="exchangeTag">上交所</span>
+              <span class="quote-time" id="quoteTime">行情时间 --</span>
+            </div>
+            <div class="name-row">
+              <h1 id="stockName">--</h1>
+              <button class="star-button" id="stockStar" type="button" aria-pressed="false" title="加入自选">
+                <svg class="icon"><use href="#icon-star"></use></svg>
+                <span id="stockStarLabel">收藏</span>
+              </button>
+            </div>
+            <div class="code-row">
+              <span class="stock-code" id="stockCode">--</span>
+              <span class="code-divider"></span>
+              <span id="stockCurrency">--</span>
+              <span class="code-divider"></span>
+              <span id="stockMarketName">--</span>
+            </div>
+          </div>
+          <div class="price-block">
+            <div class="price-line">
+              <span class="main-price" id="priceMain">--</span>
+              <span class="price-currency" id="priceCurrency">CNY</span>
+            </div>
+            <div class="change-line" id="changeLine">
+              <span id="changeValue">--</span>
+              <span class="change-pct" id="changePct">--</span>
+              <svg class="icon change-arrow" aria-hidden="true"><use href="#icon-trend"></use></svg>
+            </div>
+            <div class="price-cny" id="priceCny" hidden></div>
+          </div>
+        </header>
+
+        <section class="stat-strip" id="statStrip" aria-label="关键行情指标"></section>
+
+        <section class="card brief-card" id="briefCard" aria-labelledby="briefTitle" hidden>
+          <div class="brief-grid">
+            <article class="brief-news">
+              <header class="brief-head">
+                <div class="card-title-group">
+                  <span class="section-kicker">MARKET WIRE</span>
+                  <h2 id="briefTitle">最新市场讯息</h2>
+                </div>
+                <span class="brief-updated" id="newsUpdated">更新于 --</span>
+              </header>
+              <div class="brief-state" id="briefNewsState" hidden></div>
+              <ul class="news-list" id="newsList" aria-live="polite"></ul>
+            </article>
+            <aside class="brief-earnings" aria-labelledby="earningsTitle">
+              <header class="brief-head">
+                <div class="card-title-group">
+                  <span class="section-kicker">EARNINGS</span>
+                  <h2 id="earningsTitle">下次财报</h2>
+                </div>
+                <span class="earnings-badge is-muted" id="earningsBadge">--</span>
+              </header>
+              <div class="earnings-main">
+                <div class="earnings-date" id="earningsDate">--</div>
+                <div class="earnings-weekday" id="earningsWeekday">等待财报日程</div>
+                <div class="earnings-label" id="earningsLabel"></div>
+              </div>
+              <div class="earnings-recent" id="earningsRecent"></div>
+              <p class="earnings-meta" id="earningsMeta">数据来自东方财富公开信息</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="card intraday-card" aria-labelledby="intradayTitle">
+          <header class="card-header">
+            <div class="card-title-group">
+              <span class="section-kicker">01 / INTRADAY</span>
+              <h2 id="intradayTitle">今日走势</h2>
+              <p class="card-subtitle" id="intradaySubtitle">价格与均价的分时轨迹</p>
+            </div>
+            <div class="chart-legend" aria-label="图例">
+              <span class="legend-item"><span class="legend-swatch line-red" id="priceLegendSwatch"></span>价格</span>
+              <span class="legend-item"><span class="legend-swatch line-gold"></span>均价</span>
+              <span class="legend-item"><span class="legend-swatch dashed"></span>昨收</span>
+            </div>
+          </header>
+          <div class="chart-stage" id="chartStage">
+            <canvas id="intradayCanvas" role="img" aria-label="股票今日分时走势图"></canvas>
+            <div class="chart-tooltip" id="chartTooltip" hidden></div>
+            <div class="chart-state" id="chartState" hidden></div>
+          </div>
+          <footer class="card-footer chart-footer">
+            <div class="chart-foot-stats" id="chartFootStats"></div>
+            <span class="chart-tip">移动鼠标查看每个时点</span>
+          </footer>
+        </section>
+
+        <section class="card history-card" aria-labelledby="historyTitle">
+          <header class="card-header history-header">
+            <div class="card-title-group">
+              <span class="section-kicker">02 / RHYTHM</span>
+              <h2 id="historyTitle">涨跌日历</h2>
+              <p class="card-subtitle">方块内为当日涨跌幅 · 红涨绿跌，颜色越深波动越大</p>
+            </div>
+            <div class="range-tabs" id="rangeTabs" role="tablist" aria-label="历史区间">
+              <button type="button" data-range="1m" role="tab">1个月</button>
+              <button type="button" data-range="3m" role="tab">3个月</button>
+              <button type="button" data-range="6m" role="tab">6个月</button>
+              <button type="button" data-range="1y" role="tab">1年</button>
+            </div>
+          </header>
+
+          <div class="history-summary" id="historySummary"></div>
+
+          <section class="ai-card" id="aiPrediction" aria-label="AI 涨跌预测">
+            <header class="ai-head">
+              <div class="ai-heading">
+                <span class="ai-kicker"><svg class="icon" aria-hidden="true"><use href="#icon-spark"></use></svg>AI 预测</span>
+                <span class="ai-engine" id="aiEngine">本地量化模型</span>
+              </div>
+              <div class="ai-head-actions">
+                <button type="button" class="text-button ai-stats-open" id="aiStatsOpen">预测统计</button>
+                <button type="button" class="ai-predict" id="aiPredict">AI 预测下一交易日</button>
+              </div>
+            </header>
+            <div class="ai-body" id="aiBody" aria-live="polite"></div>
+          </section>
+
+          <div class="history-toolbar">
+            <div class="heat-legend" aria-label="涨跌颜色图例">
+              <span class="heat-legend-label">跌幅</span>
+              <span class="heat-swatch down-level-4"></span>
+              <span class="heat-swatch down-level-2"></span>
+              <span class="heat-swatch flat"></span>
+              <span class="heat-swatch up-level-2"></span>
+              <span class="heat-swatch up-level-4"></span>
+              <span class="heat-legend-label">涨幅</span>
+            </div>
+            <div class="view-toggle" id="viewToggle" role="group" aria-label="历史数据视图">
+              <button type="button" data-view="calendar" class="active"><svg class="icon"><use href="#icon-calendar"></use></svg>日历</button>
+              <button type="button" data-view="table"><svg class="icon"><use href="#icon-list"></use></svg>明细</button>
+            </div>
+          </div>
+
+          <div class="history-body">
+            <div class="history-loading" id="historyLoading" hidden>
+              <span class="spinner"></span><span>正在翻找历史行情…</span>
+            </div>
+            <div class="history-error" id="historyError" hidden>
+              <p id="historyErrorText">历史数据加载失败。</p>
+              <button type="button" class="text-button" id="historyRetry">重试</button>
+            </div>
+            <div class="calendar-grid" id="calendarView"></div>
+            <div class="table-wrap" id="tableView" hidden>
+              <table class="day-table">
+                <thead><tr><th>日期</th><th>收盘</th><th>涨跌幅</th><th>开盘</th><th>最高</th><th>最低</th><th>成交量</th><th>成交额</th></tr></thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <footer class="card-footer history-footer">
+            <span id="historyFootnote">数据按前复权价格计算</span>
+            <span class="history-note">涨跌幅为当日收盘相对前收盘</span>
+          </footer>
+        </section>
+
+        <footer class="page-footer">
+          <span>STOCK ATLAS · 股票罗盘</span>
+          <span>行情来自东方财富公开接口 · 仅作学习研究</span>
+        </footer>
+      </section>
+
+      <section class="heatmap-view" id="heatmapView" hidden aria-labelledby="heatmapTitle">
+        <header class="heatmap-header">
+          <div class="heatmap-heading">
+            <span class="section-kicker">03 / MARKET MAP</span>
+            <h1 id="heatmapTitle">股票热力图</h1>
+            <p class="heatmap-subtitle">按行业聚合的股票地图 · 面积代表规模，颜色代表强弱，点击色块查看个股行情</p>
+          </div>
+          <div class="heatmap-summary" id="heatmapSummary" aria-live="polite"></div>
+        </header>
+
+        <div class="heatmap-market-row">
+          <div class="market-tabs" id="heatmapMarkets" role="tablist" aria-label="热力图市场">
+            <button type="button" role="tab" data-heatmap-market="shanghai" aria-selected="false"><strong>Shanghai</strong><span>沪市 A 股</span></button>
+            <button type="button" role="tab" data-heatmap-market="us500" aria-selected="true"><strong>US 500</strong><span>标普 500</span></button>
+            <button type="button" role="tab" data-heatmap-market="nasdaq100" aria-selected="false"><strong>Nasdaq 100</strong><span>纳斯达克 100</span></button>
+            <button type="button" role="tab" data-heatmap-market="us30" aria-selected="false"><strong>US30</strong><span>道琼斯 30</span></button>
+            <button type="button" role="tab" data-heatmap-market="hk" aria-selected="false"><strong>HK</strong><span>香港股市</span></button>
+          </div>
+          <span class="heatmap-timestamp" id="heatmapUpdated">等待数据</span>
+        </div>
+
+        <div class="heatmap-controls" aria-label="热力图显示依据">
+          <label class="heatmap-control">
+            <span>面积依据</span>
+            <span class="heatmap-select">
+              <select id="heatmapArea">
+                <option value="marketCap">总市值</option>
+                <option value="amount">成交额</option>
+                <option value="volume">成交量</option>
+                <option value="equal">等权</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+            </span>
+          </label>
+          <label class="heatmap-control">
+            <span>颜色依据</span>
+            <span class="heatmap-select">
+              <select id="heatmapColor">
+                <option value="changePct">涨跌幅</option>
+                <option value="amplitudePct">振幅</option>
+                <option value="turnoverPct">换手率</option>
+                <option value="amount">成交额</option>
+                <option value="marketCap">总市值</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+            </span>
+          </label>
+          <label class="heatmap-control">
+            <span>标签依据</span>
+            <span class="heatmap-select">
+              <select id="heatmapLabel">
+                <option value="namePct">名称 + 涨跌幅</option>
+                <option value="name">名称</option>
+                <option value="code">代码</option>
+                <option value="codePct">代码 + 涨跌幅</option>
+                <option value="nameCap">名称 + 市值</option>
+              </select>
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+            </span>
+          </label>
+          <div class="heatmap-legend" id="heatmapLegend" aria-label="颜色图例"></div>
+        </div>
+
+        <div class="heatmap-stage" id="heatmapStage" role="group" aria-label="股票热力图">
+          <div class="heatmap-board" id="heatmapBoard"></div>
+          <div class="heatmap-state" id="heatmapState" hidden aria-live="polite">
+            <span class="spinner"></span>
+            <span id="heatmapStateText">正在读取市场热力图…</span>
+            <button type="button" class="text-button" id="heatmapRetry" hidden>重试</button>
+          </div>
+        </div>
+
+        <footer class="heatmap-footer">
+          <span id="heatmapFootnote">--</span>
+          <span class="heatmap-note">面积 / 颜色 / 标签可在上方切换 · 数据来自东方财富公开接口</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="tile-tooltip" id="tileTooltip" hidden></div>
+  <div class="heatmap-tooltip" id="heatmapTooltip" hidden></div>
+
+  <div class="ai-modal-backdrop" id="aiStatsModal" hidden>
+    <section class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="aiStatsTitle">
+      <header class="ai-modal-head">
+        <div class="ai-modal-title">
+          <span class="section-kicker">04 / ACCURACY</span>
+          <h2 id="aiStatsTitle">预测复盘</h2>
+        </div>
+        <button type="button" class="icon-button" id="aiStatsClose" aria-label="关闭预测统计">
+          <svg class="icon" aria-hidden="true"><use href="#icon-x"></use></svg>
+        </button>
+      </header>
+      <div class="ai-scope-tabs" id="aiScopeTabs" role="tablist" aria-label="统计范围">
+        <button type="button" role="tab" data-scope="all" class="active" aria-selected="true">全部标的</button>
+        <button type="button" role="tab" data-scope="stock" aria-selected="false">本标的</button>
+      </div>
+      <div class="ai-stats-content" id="aiStatsContent"></div>
+      <footer class="ai-modal-foot" id="aiStatsFoot">AI 预测仅供参考，不构成投资建议</footer>
+    </section>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "apiKey": "sk-在这里填入你的 API Key",
+  "baseUrl": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "timeout": 30
+}
