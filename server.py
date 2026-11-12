@@ -21,6 +21,7 @@ import time
 import webbrowser
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta
+from http.client import HTTPException
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -40,6 +41,13 @@ BATCH_URL = "https://push2.eastmoney.com/api/qt/ulist.np/get"
 NEWS_SEARCH_URL = "https://search-api-web.eastmoney.com/search/jsonp"
 EARNINGS_APPOINT_URL = "https://datacenter-web.eastmoney.com/api/data/v1/get"
 F10_EVENT_URL = "https://datacenter.eastmoney.com/securities/api/data/get"
+# 东方财富 push2 接口偶尔会整段不可用（连接被重置/限流），此时用腾讯行情兜底，
+# 保证主界面仍能展示快照、分时与日线。
+TENCENT_QUOTE_URL = "https://qt.gtimg.cn/q="
+TENCENT_MINUTE_URL = "https://web.ifzq.gtimg.cn/appstock/app/minute/query"
+TENCENT_KLINE_URL = "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get"
+TENCENT_HEADERS = {"Referer": "https://gu.qq.com/"}
+TENCENT_US_SUFFIX = {105: "OQ", 106: "N", 107: "AM"}
 SEARCH_TOKEN = "D43BF722C8E33BDC906FB84D85E326E8"
 HEATMAP_MEMBERS_PATH = ROOT / "data" / "heatmap_members.json"
 PREDICTION_DB_PATH = ROOT / "data" / "predictions.db"
@@ -47,6 +55,8 @@ AI_CONFIG_PATH = ROOT / "data" / "ai_config.json"
 AI_DEFAULT_BASE_URL = "https://api.deepseek.com"
 AI_DEFAULT_MODEL = "deepseek-flash"
 MAX_SETTLE_SYMBOLS = 30
+UPSTREAM_TIMEOUT = 6
+UPSTREAM_ATTEMPTS = 2
 
 ALLOWED_MARKETS = {0, 1, 101, 102, 105, 106, 107, 116, 133}
 SYMBOL_RE = re.compile(r"^(101|102|133|0|1|105|106|107|116)\.([A-Za-z0-9._\-]{1,16})$")
@@ -163,6 +173,7 @@ REQUEST_HEADERS = {
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.7",
     "Referer": "https://quote.eastmoney.com/",
+    "Connection": "close",
 }
 
 
@@ -213,6 +224,7 @@ def fetch_text(
     url: str,
     params: dict[str, object] | None = None,
     headers: dict[str, str] | None = None,
+    encoding: str = "utf-8",
 ) -> str:
     """请求并返回文本；短暂网络抖动时自动重试一次，兼容 gzip 响应。"""
     request_url = f"{url}?{urlencode(params)}" if params else url
@@ -220,24 +232,27 @@ def fetch_text(
     if headers:
         merged_headers.update(headers)
     last_error: Exception | None = None
-    for attempt in range(2):
+    for attempt in range(UPSTREAM_ATTEMPTS):
         try:
             request = Request(request_url, headers=merged_headers)
-            with urlopen(request, timeout=12) as response:
+            with urlopen(request, timeout=UPSTREAM_TIMEOUT) as response:
                 raw = response.read()
-                encoding = (response.headers.get("Content-Encoding") or "").lower()
-            if "gzip" in encoding:
+                content_encoding = (response.headers.get("Content-Encoding") or "").lower()
+            if "gzip" in content_encoding:
                 try:
                     raw = gzip.decompress(raw)
                 except OSError:
                     pass
-            text = raw.decode("utf-8", errors="replace").strip()
+            text = raw.decode(encoding, errors="replace").strip()
             if not text:
                 raise ValueError("empty response")
             return text
-        except (HTTPError, URLError, TimeoutError, ValueError) as exc:
+        except (OSError, HTTPException, ValueError) as exc:
+            # RemoteDisconnected / BadStatusLine / 超时 / TLS 重置等都归入
+            # 上游不可用。特别是 RemoteDisconnected 继承自 ConnectionResetError，
+            # 若不在这里转换，会被 HTTP 层误当作“浏览器断开连接”而静默丢弃响应。
             last_error = exc
-            if attempt == 0:
+            if attempt < UPSTREAM_ATTEMPTS - 1:
                 time.sleep(0.35)
     raise ApiError(
         "UPSTREAM_UNAVAILABLE",
@@ -250,9 +265,10 @@ def fetch_json(
     url: str,
     params: dict[str, object],
     headers: dict[str, str] | None = None,
+    encoding: str = "utf-8",
 ) -> dict:
-    """请求并解析东方财富 JSON；短暂网络抖动时自动重试一次。"""
-    text = fetch_text(url, params, headers)
+    """请求并解析 JSON；短暂网络抖动时自动重试一次。"""
+    text = fetch_text(url, params, headers, encoding=encoding)
     try:
         payload = json.loads(text)
     except json.JSONDecodeError as exc:
@@ -509,7 +525,7 @@ def search_stocks(query: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 
-def get_quote(symbol: str) -> dict:
+def _get_quote_eastmoney(symbol: str) -> dict:
     market, code = parse_symbol(symbol)
     fields = (
         "f43,f44,f45,f46,f47,f48,f57,f58,f59,f60,f86,f107,f116,f117,"
@@ -572,7 +588,7 @@ def get_quote(symbol: str) -> dict:
     return result
 
 
-def get_intraday(symbol: str) -> dict:
+def _get_intraday_eastmoney(symbol: str) -> dict:
     market, code = parse_symbol(symbol)
     fields1 = "f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13"
     fields2 = "f51,f52,f53,f54,f55,f56,f57,f58"
@@ -706,7 +722,7 @@ def build_history_summary(items: list[dict]) -> dict:
     }
 
 
-def load_daily_bars(symbol: str) -> dict:
+def _load_daily_bars_eastmoney(symbol: str) -> dict:
     """读取最近 520 个交易日的日线，供历史区间、AI 预测和结算共用。"""
     market, code = parse_symbol(symbol)
     payload = fetch_json(
@@ -761,6 +777,325 @@ def load_daily_bars(symbol: str) -> dict:
     }
 
 
+# ---------------------------------------------------------------------------
+# 腾讯行情兜底（东方财富 push2 连接被重置时使用）
+# ---------------------------------------------------------------------------
+
+
+def tencent_code(symbol: str, with_us_suffix: bool = False) -> str:
+    market, code = parse_symbol(symbol)
+    if market in (0, 1):
+        prefix = "sh" if market == 1 else "sz"
+        if code.startswith(("4", "8", "9")):
+            prefix = "bj"
+        return f"{prefix}{code}"
+    if market == 116:
+        return f"hk{code}"
+    if market in (105, 106, 107):
+        suffix = TENCENT_US_SUFFIX.get(market) if with_us_suffix else None
+        return f"us{code}.{suffix}" if suffix else f"us{code}"
+    raise ApiError("NO_FALLBACK", "该标的暂不支持备用行情源", 404)
+
+
+def tencent_quote_fields(symbol: str) -> list[str]:
+    text = fetch_text(
+        TENCENT_QUOTE_URL + tencent_code(symbol),
+        headers=TENCENT_HEADERS,
+        encoding="gbk",
+    )
+    match = re.search(r'="(.*)"', text, re.S)
+    if not match:
+        raise ApiError("NO_QUOTE", "备用行情源没有返回报价", 502)
+    fields = match.group(1).split("~")
+    if len(fields) < 50 or not fields[3]:
+        raise ApiError("NO_QUOTE", "备用行情源没有返回完整报价", 502)
+    return fields
+
+
+def _tencent_quote_time(fields: list[str], market: int) -> str | None:
+    if len(fields) <= 30:
+        return None
+    raw = fields[30].strip()
+    zone = SHANGHAI_TZ if market in (0, 1, 116) else ZoneInfo("America/New_York")
+    for fmt in ("%Y%m%d%H%M%S", "%Y/%m/%d %H:%M:%S", "%Y-%m-%d %H:%M:%S"):
+        try:
+            stamp = datetime.strptime(raw, fmt).replace(tzinfo=zone)
+        except ValueError:
+            continue
+        return stamp.astimezone(SHANGHAI_TZ).isoformat(timespec="seconds")
+    return None
+
+
+def get_quote_tencent(symbol: str) -> dict:
+    market, code = parse_symbol(symbol)
+    fields = tencent_quote_fields(symbol)
+    price = number(fields[3])
+    if price is None:
+        raise ApiError("NO_QUOTE", "备用行情源没有返回有效价格", 502)
+
+    decimals = 3 if market == 116 else 2
+    prev_close = number(fields[4])
+    change = number(fields[31])
+    change_pct = number(fields[32])
+    raw_volume = number(fields[36]) if len(fields) > 36 else number(fields[6])
+    raw_amount = number(fields[37]) if len(fields) > 37 else None
+    volume = (raw_volume or 0) * (100 if market in (0, 1) else 1)
+    amount = (raw_amount or 0) * (10000 if market in (0, 1) else 1)
+    float_cap = number(fields[44]) if len(fields) > 44 else None
+    total_cap = number(fields[45]) if len(fields) > 45 else None
+    pe = number(fields[39]) if len(fields) > 39 else None
+    pb = number(fields[46]) if len(fields) > 46 else None
+    if pb is None and market not in (0, 1) and len(fields) > 47:
+        # 港股/美股在市值后多一个公司英文名字段，市净率后移一位。
+        pb = number(fields[47])
+    name = str(fields[1] or code)
+
+    return {
+        "stock": market_meta(market, code, name),
+        "price": rounded(price),
+        "open": rounded(number(fields[5])),
+        "high": rounded(number(fields[33]) if len(fields) > 33 else None),
+        "low": rounded(number(fields[34]) if len(fields) > 34 else None),
+        "prevClose": rounded(prev_close),
+        "change": rounded(change),
+        "changePct": rounded(change_pct),
+        "volume": rounded(volume, 0),
+        "amount": rounded(amount, 2),
+        "turnoverPct": rounded(number(fields[38]) if len(fields) > 38 else None),
+        "amplitudePct": rounded(number(fields[43]) if len(fields) > 43 else None),
+        "pe": rounded(pe) if pe and pe > 0 else None,
+        "pb": rounded(pb) if pb and pb > 0 else None,
+        "marketCap": rounded((total_cap or 0) * 1e8, 2) if total_cap else None,
+        "floatCap": rounded((float_cap or 0) * 1e8, 2) if float_cap else None,
+        "decimals": decimals,
+        "quoteTime": _tencent_quote_time(fields, market),
+        "updatedAt": iso_time(),
+        "_source": "腾讯行情（备用）",
+    }
+
+
+def get_intraday_tencent(symbol: str) -> dict:
+    market, code = parse_symbol(symbol)
+    if market in (105, 106, 107):
+        # 腾讯美股分时只返回当前一个点，无法绘制走势图。
+        raise ApiError("NO_INTRADAY", "备用行情源暂不提供美股分时", 404)
+
+    tcode = tencent_code(symbol)
+    payload = fetch_json(TENCENT_MINUTE_URL, {"code": tcode}, TENCENT_HEADERS)
+    data = payload.get("data")
+    bundle = data.get(tcode) if isinstance(data, dict) else None
+    if not isinstance(bundle, dict):
+        raise ApiError("NO_INTRADAY", "备用行情源没有返回分时数据", 404)
+    block = bundle.get("data")
+    rows = block.get("data") if isinstance(block, dict) else None
+    if not isinstance(rows, list) or not rows:
+        raise ApiError("NO_INTRADAY", "备用行情源没有返回分时数据", 404)
+
+    date_raw = str(block.get("date") or "").strip() if isinstance(block, dict) else ""
+    if len(date_raw) == 8 and date_raw.isdigit():
+        trading_date = f"{date_raw[:4]}-{date_raw[4:6]}-{date_raw[6:8]}"
+    else:
+        trading_date = now_shanghai().date().isoformat()
+
+    qt = bundle.get("qt")
+    qt_fields: list = []
+    if isinstance(qt, dict):
+        candidate = qt.get(tcode)
+        if isinstance(candidate, list):
+            qt_fields = candidate
+        else:
+            qt_fields = next((value for value in qt.values() if isinstance(value, list)), [])
+    prev_close = number(qt_fields[4]) if len(qt_fields) > 4 else None
+    name = str(qt_fields[1]) if len(qt_fields) > 1 else code
+    decimals = 3 if market == 116 else 2
+    lot = 100 if market in (0, 1) else 1
+
+    points: list[dict] = []
+    previous_volume = 0.0
+    previous_amount = 0.0
+    for row in rows:
+        parts = str(row).split()
+        if len(parts) < 2:
+            continue
+        raw_time = parts[0]
+        if len(raw_time) != 4 or not raw_time.isdigit():
+            continue
+        minute = int(raw_time)
+        if market in (0, 1) and (
+            minute < 930 or minute > 1500 or 1130 < minute < 1300
+        ):
+            # A 股只保留连续竞价时段，腾讯数据在 15:00 之后还有零星成交。
+            continue
+        price = number(parts[1])
+        if price is None:
+            continue
+        cumulative_volume = number(parts[2]) if len(parts) > 2 else None
+        cumulative_amount = number(parts[3]) if len(parts) > 3 else None
+        delta_volume = (
+            max(0.0, cumulative_volume - previous_volume)
+            if cumulative_volume is not None
+            else 0.0
+        )
+        if cumulative_volume is not None:
+            previous_volume = cumulative_volume
+        delta_amount = (
+            max(0.0, cumulative_amount - previous_amount)
+            if cumulative_amount is not None
+            else None
+        )
+        if cumulative_amount is not None:
+            previous_amount = cumulative_amount
+        average = None
+        if cumulative_amount and cumulative_volume:
+            average = cumulative_amount / (cumulative_volume * lot)
+        points.append(
+            {
+                "datetime": f"{trading_date} {raw_time[:2]}:{raw_time[2:]}",
+                "time": f"{raw_time[:2]}:{raw_time[2:]}",
+                "price": rounded(price),
+                "avg": rounded(average),
+                "volume": rounded(delta_volume * lot, 0),
+                "amount": rounded(delta_amount, 2) if delta_amount is not None else None,
+            }
+        )
+
+    if not points:
+        raise ApiError("NO_INTRADAY", "备用行情源没有返回分时数据", 404)
+    if not prev_close:
+        prev_close = number(points[0].get("price"))
+    return {
+        "stock": market_meta(market, code, name),
+        "prevClose": rounded(prev_close),
+        "decimals": decimals,
+        "tradingDate": trading_date,
+        "points": points,
+        "total": len(points),
+        "updatedAt": _tencent_quote_time(qt_fields, market) or iso_time(),
+        "_source": "腾讯行情（备用）",
+    }
+
+
+def load_daily_bars_tencent(symbol: str) -> dict:
+    market, code = parse_symbol(symbol)
+    tcode = tencent_code(symbol, with_us_suffix=True)
+    payload = fetch_json(
+        TENCENT_KLINE_URL,
+        {"param": f"{tcode},day,,,520,qfq"},
+        TENCENT_HEADERS,
+    )
+    data = payload.get("data")
+    bundle = data.get(tcode) if isinstance(data, dict) else None
+    if not isinstance(bundle, dict):
+        raise ApiError("NO_HISTORY", "备用行情源没有返回历史行情", 404)
+    rows = bundle.get("qfqday") or bundle.get("day") or []
+    if not isinstance(rows, list) or not rows:
+        raise ApiError("NO_HISTORY", "备用行情源没有返回历史行情", 404)
+
+    name = code
+    qt = bundle.get("qt")
+    if isinstance(qt, dict):
+        candidate = qt.get(tcode)
+        if isinstance(candidate, list) and len(candidate) > 1:
+            name = str(candidate[1])
+        else:
+            first = next((value for value in qt.values() if isinstance(value, list)), None)
+            if first and len(first) > 1:
+                name = str(first[1])
+
+    decimals = 3 if market == 116 else 2
+    items: list[dict] = []
+    prev_close: float | None = None
+    for row in rows:
+        if not isinstance(row, (list, tuple)) or len(row) < 6:
+            continue
+        close = number(row[2])
+        if close is None:
+            continue
+        open_price = number(row[1])
+        high = number(row[3])
+        low = number(row[4])
+        volume = number(row[5])
+        change = None
+        pct = None
+        amplitude = None
+        if prev_close:
+            change = close - prev_close
+            pct = (close / prev_close - 1) * 100
+            if high is not None and low is not None:
+                amplitude = (high - low) / prev_close * 100
+        items.append(
+            {
+                "date": str(row[0]),
+                "open": rounded(open_price),
+                "close": rounded(close),
+                "high": rounded(high),
+                "low": rounded(low),
+                "volume": rounded(
+                    (volume or 0) * (100 if market in (0, 1) else 1), 0
+                ),
+                "amount": None,
+                "amplitudePct": rounded(amplitude),
+                "pct": rounded(pct) if pct is not None else 0.0,
+                "change": rounded(change),
+                "turnoverPct": None,
+            }
+        )
+        prev_close = close
+
+    if not items:
+        raise ApiError("NO_HISTORY", "备用行情源没有返回历史行情", 404)
+    return {
+        "stock": market_meta(market, code, name),
+        "decimals": decimals,
+        "items": items,
+        "_source": "腾讯行情（备用）",
+    }
+
+
+def _tencent_fallback_supported(symbol: str) -> bool:
+    try:
+        market, _code = parse_symbol(symbol)
+    except ApiError:
+        return False
+    return market in (0, 1, 105, 106, 107, 116)
+
+
+def get_quote(symbol: str) -> dict:
+    try:
+        return _get_quote_eastmoney(symbol)
+    except ApiError as primary_error:
+        if not _tencent_fallback_supported(symbol):
+            raise
+        try:
+            return get_quote_tencent(symbol)
+        except ApiError:
+            raise primary_error
+
+
+def get_intraday(symbol: str) -> dict:
+    try:
+        return _get_intraday_eastmoney(symbol)
+    except ApiError as primary_error:
+        if not _tencent_fallback_supported(symbol):
+            raise
+        try:
+            return get_intraday_tencent(symbol)
+        except ApiError:
+            raise primary_error
+
+
+def load_daily_bars(symbol: str) -> dict:
+    try:
+        return _load_daily_bars_eastmoney(symbol)
+    except ApiError as primary_error:
+        if not _tencent_fallback_supported(symbol):
+            raise
+        try:
+            return load_daily_bars_tencent(symbol)
+        except ApiError:
+            raise primary_error
+
+
 def get_history(symbol: str, range_key: str) -> dict:
     if range_key not in RANGE_DAYS:
         raise ApiError("INVALID_RANGE", "时间范围不正确", 400)
@@ -771,7 +1106,7 @@ def get_history(symbol: str, range_key: str) -> dict:
         raise ApiError("NO_HISTORY", "这个时间范围内没有交易数据", 404)
 
     summary = build_history_summary(items)
-    return {
+    result = {
         "stock": bundle["stock"],
         "range": range_key,
         "rangeLabel": RANGE_LABELS[range_key],
@@ -780,6 +1115,9 @@ def get_history(symbol: str, range_key: str) -> dict:
         "summary": summary,
         "updatedAt": iso_time(),
     }
+    if bundle.get("_source"):
+        result["_source"] = bundle["_source"]
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -1825,7 +2163,6 @@ def call_ai_prediction(context: dict, config: dict) -> dict:
         },
         method="POST",
     )
-    print(f"apikey: {config['apiKey']}")
     try:
         with urlopen(request, timeout=float(config.get("timeout") or 30)) as response:
             body = response.read().decode("utf-8", errors="replace")
@@ -2572,6 +2909,7 @@ def api_quotes(params: dict[str, list[str]]) -> dict:
             data, _state = cached_json(f"quote:{symbol}", 20, lambda: get_quote(symbol))
             payload = dict(data)  # type: ignore[arg-type]
             payload.pop("_cache", None)
+            payload.pop("_source", None)
             return symbol, payload, None
         except ApiError as exc:
             return symbol, None, exc.message
@@ -2804,6 +3142,19 @@ class StockHandler(BaseHTTPRequestHandler):
             raise ApiError("INVALID_JSON", "请求内容必须是 JSON 对象", 400)
         return payload
 
+    def _send_json_safely(self, status: int, payload: dict, head_only: bool = False) -> None:
+        """只在写回浏览器时容忍断连，不要吞掉上游请求的异常。"""
+        try:
+            self._send_json(status, payload, head_only)
+        except (BrokenPipeError, ConnectionResetError):
+            self.close_connection = True
+
+    def _send_error_json_safely(self, error: ApiError, head_only: bool = False) -> None:
+        try:
+            self._send_error_json(error, head_only)
+        except (BrokenPipeError, ConnectionResetError):
+            self.close_connection = True
+
     def _serve_api(
         self,
         route: str,
@@ -2815,7 +3166,7 @@ class StockHandler(BaseHTTPRequestHandler):
         handler = POST_ROUTES.get(route) if is_post else API_ROUTES.get(route)
         if handler is None:
             if route in API_ROUTES or route in POST_ROUTES:
-                self._send_error_json(
+                self._send_error_json_safely(
                     ApiError(
                         "METHOD_NOT_ALLOWED",
                         "该接口只支持 " + ("POST" if route in POST_ROUTES else "GET") + " 请求",
@@ -2824,15 +3175,18 @@ class StockHandler(BaseHTTPRequestHandler):
                     head_only,
                 )
             else:
-                self._send_error_json(ApiError("NOT_FOUND", "接口不存在", 404), head_only)
+                self._send_error_json_safely(
+                    ApiError("NOT_FOUND", "接口不存在", 404), head_only
+                )
             return
         started = time.time()
         try:
             data = handler(params, body) if is_post else handler(params)
             cache_state = data.pop("_cache", None)
+            source = data.pop("_source", None)
             is_prediction = route.startswith("/api/prediction")
             meta = {
-                "source": "本地预测记录" if is_prediction else "东方财富",
+                "source": source or ("本地预测记录" if is_prediction else "东方财富"),
                 "fetchedAt": iso_time(),
                 "elapsedMs": int((time.time() - started) * 1000),
                 "cached": cache_state in ("hit", "stale"),
@@ -2840,16 +3194,16 @@ class StockHandler(BaseHTTPRequestHandler):
             if cache_state == "stale":
                 meta["stale"] = True
                 meta["notice"] = "行情源暂不可用，正在展示最近一次缓存数据"
-            self._send_json(200, {"ok": True, "data": data, "meta": meta}, head_only)
         except ApiError as exc:
-            self._send_error_json(exc, head_only)
-        except (BrokenPipeError, ConnectionResetError):
+            self._send_error_json_safely(exc, head_only)
             return
         except Exception as exc:  # 避免单次请求异常拖垮服务
             self.log_message("Unhandled API error: %r", exc)
-            self._send_error_json(
+            self._send_error_json_safely(
                 ApiError("INTERNAL_ERROR", "服务处理请求时出现异常", 500), head_only
             )
+            return
+        self._send_json_safely(200, {"ok": True, "data": data, "meta": meta}, head_only)
 
     def _serve_static(self, raw_path: str, head_only: bool = False) -> None:
         path = unquote(raw_path)
@@ -2946,7 +3300,7 @@ def main() -> None:
         url = f"http://127.0.0.1:{args.port}"
     print("\n  股票罗盘 STOCK ATLAS")
     print(f"  ➜  {url}")
-    print("  ➜  数据源：东方财富公开行情接口")
+    print("  ➜  数据源：东方财富公开行情接口（腾讯行情备用）")
     print("  ➜  按 Ctrl+C 停止服务\n")
     if args.open:
         threading.Timer(0.6, lambda: webbrowser.open(url)).start()

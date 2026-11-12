@@ -2006,6 +2006,7 @@
       const { data } = await api("/api/prediction", {
         method: "POST",
         body: { symbol, refresh: Boolean(force) },
+        timeoutMs: 45_000,
       });
       if (state.selected?.symbol !== symbol) return;
       state.prediction.data = { ...data, symbol };
@@ -3878,6 +3879,20 @@
      ------------------------------------------------------------------------ */
 
   async function api(path, options = {}) {
+    const timeoutMs = Number.isFinite(options.timeoutMs) ? options.timeoutMs : 30_000;
+    const externalSignal = options.signal || null;
+    const controller = new AbortController();
+    let timedOut = false;
+    const timer = window.setTimeout(() => {
+      timedOut = true;
+      controller.abort();
+    }, timeoutMs);
+    const forwardAbort = () => controller.abort();
+    if (externalSignal) {
+      if (externalSignal.aborted) controller.abort();
+      else externalSignal.addEventListener("abort", forwardAbort, { once: true });
+    }
+
     let response;
     try {
       response = await fetch(path, {
@@ -3888,11 +3903,17 @@
         },
         body: options.body ? JSON.stringify(options.body) : undefined,
         cache: "no-store",
-        signal: options.signal,
+        signal: controller.signal,
       });
     } catch (error) {
-      if (error.name === "AbortError") throw error;
+      if (error.name === "AbortError") {
+        if (externalSignal?.aborted) throw error;
+        if (timedOut) throw new Error("行情服务响应超时，请稍后重试。");
+      }
       throw new Error("网络连接失败，请确认本地服务仍在运行。");
+    } finally {
+      window.clearTimeout(timer);
+      if (externalSignal) externalSignal.removeEventListener("abort", forwardAbort);
     }
     let payload = null;
     try {
